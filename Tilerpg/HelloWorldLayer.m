@@ -119,7 +119,7 @@
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
-	// 'scene' is an autorelease object.
+	// 'scene' is an autorelease object.agh
 	CCScene *scene = [CCScene node];
     
 	// 'layer' is an autorelease object.
