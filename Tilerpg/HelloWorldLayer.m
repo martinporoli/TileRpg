@@ -340,6 +340,18 @@
                 [self loadWorld:@"World2.tmx":@"SpawnPointJob"];
                 return;
             }
+            NSString *Shop = [properties valueForKey:@"Shop"];
+            if (Shop && [Shop compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"shop.tmx":@"SpawnPoint"];
+                return;
+            }
+            NSString *OutShop = [properties valueForKey:@"OutShop"];
+            if (OutShop && [OutShop compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx":@"SpawnPointShop"];
+                return;
+            }
             
             NSString *jump = [properties valueForKey:@"jump"];
             if (jump && [jump compare:@"True"] == NSOrderedSame) {
