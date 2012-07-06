@@ -42,7 +42,7 @@
   <image source="character-tiles.png" width="96" height="96"/>
  </tileset>
  <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
-  <image source="../Tilerpg/character-tiles.png" width="96" height="96"/>
+  <image source="character-tiles.png" width="96" height="96"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
