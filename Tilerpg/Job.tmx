@@ -18,6 +18,11 @@
   </tile>
   <tile id="2">
    <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
     <property name="Collidable" value="True"/>
     <property name="JobTalk" value="True"/>
    </properties>
@@ -36,6 +41,9 @@
  <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
   <image source="character-tiles.png" width="96" height="96"/>
  </tileset>
+ <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
+ </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
    eJzt0kEKgCAQRuEp6Apqq6a6/x1zYSBiJCGMwfvggS5c/JQIAAAAAAAAAAAAAADfaaesaaesaaesaaesadEcC7E9dmTnNTWne5Cxd7jYVulM3XcnY++YUkvDOX9nTaW+o6X8nTUt8tL2Pbz8Y8dbo+/Iq/0/T1m7AIOTEy0=
@@ -43,7 +51,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt1EEKgCAQBVAvW23bevsIisQkooKmeA8GDWbxx8SUAAAAAAAAAIA7+rcDPCTqHP2Fiuhvc8zysg7Vd6s3mjJXl7bs9b7VH0krV077f3HUH0F5V8pzb+2j36uz2b4wx1rjUl94ryaHZhxm
+   eJzt1MsKgCAQBVB/1mrZ/68iMAoxogc0xTkwiDKLOyimBAAAAAAAAADc0b0d4CFR5+guVER/m2PWl3Wo9q3eaLa5clqz5+q81R9JK1d9D0f9EWzfyt4d5EZvNGeyfWGOpcZSX/ivJj5GGy0=
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -53,7 +61,7 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="foreground" width="50" height="50">
+ <layer name="Characters" width="50" height="50">
   <data encoding="base64" compression="zlib">
    eJztziEBAAAIA7D3z0YozBNgMFuCJQAAAAAAAAAAcDffAYBayf0AzQ==
   </data>
