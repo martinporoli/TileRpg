@@ -10,6 +10,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="11">
+   <properties>
+    <property name="OutShop" value="True"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -18,7 +23,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.53">
   <data encoding="base64" compression="zlib">
-   eJzt1LENwCAMBECmZf8RaCgDCane6E5yQ/WPMK0BAAAAAAAAANTX5yTqPyfNaa7kHk9nu7tP7/E13w09Kryrt3wV9ny1E+n/1QAKsBPt
+   eJzt1CkOACEQBEBei+b/ag2KkL1UD6lK2qCmCUNrAAAAAAAAAAD19ZlE/WfSfJ0rucfu7O7u03u8ne+EHhXe1dN8FfZ8zZhJ/68um/AUzQ==
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">

@@ -167,7 +167,6 @@
 		90B949A715A70AB0007F67C8 /* meta-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499115A70AB0007F67C8 /* meta-tiles.png */; };
 		90B949A815A70AB0007F67C8 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499215A70AB0007F67C8 /* school.png */; };
 		90B949AA15A70AB0007F67C8 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499415A70AB0007F67C8 /* shop.png */; };
-		90B949AB15A70AB0007F67C8 /* shop.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499515A70AB0007F67C8 /* shop.tmx */; };
 		90B949AD15A70AB0007F67C8 /* World1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499715A70AB0007F67C8 /* World1.tmx */; };
 		90B949AE15A70AB0007F67C8 /* World2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499815A70AB0007F67C8 /* World2.tmx */; };
 		90B949BB15A70FCE007F67C8 /* Job.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B949BA15A70FCE007F67C8 /* Job.tmx */; };
@@ -469,7 +468,6 @@
 		90B9499115A70AB0007F67C8 /* meta-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meta-tiles.png"; sourceTree = "<group>"; };
 		90B9499215A70AB0007F67C8 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
 		90B9499415A70AB0007F67C8 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
-		90B9499515A70AB0007F67C8 /* shop.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shop.tmx; sourceTree = "<group>"; };
 		90B9499715A70AB0007F67C8 /* World1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World1.tmx; sourceTree = "<group>"; };
 		90B9499815A70AB0007F67C8 /* World2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World2.tmx; sourceTree = "<group>"; };
 		90B949BA15A70FCE007F67C8 /* Job.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Job.tmx; sourceTree = "<group>"; };
@@ -1054,7 +1052,6 @@
 				90B949A715A70AB0007F67C8 /* meta-tiles.png in Resources */,
 				90B949A815A70AB0007F67C8 /* school.png in Resources */,
 				90B949AA15A70AB0007F67C8 /* shop.png in Resources */,
-				90B949AB15A70AB0007F67C8 /* shop.tmx in Resources */,
 				90B949AD15A70AB0007F67C8 /* World1.tmx in Resources */,
 				90B949AE15A70AB0007F67C8 /* World2.tmx in Resources */,
 				90303D6415A70B51003D9885 /* GubbeTranar.png in Resources */,
