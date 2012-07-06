@@ -34,6 +34,7 @@
         [pratMenu alignItemsVertically];
         [self addChild:pratMenu];
         pratMenu.position=ccp(-500,-500);
+        //hejß
     }
     return self;
 }
