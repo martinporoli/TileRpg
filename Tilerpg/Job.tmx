@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="Job" tilewidth="32" tileheight="32">
-  <image source="Job.png" width="320" height="320"/>
+  <image source="../Tilerpg/Job.png" width="320" height="320"/>
  </tileset>
  <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
-  <image source="meta-tiles.png" width="320" height="320"/>
+  <image source="../Tilerpg/meta-tiles.png" width="320" height="320"/>
   <tile id="0">
    <properties>
     <property name="" value=""/>
@@ -16,11 +16,25 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="2">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="JobTalk" value="True"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="OutJob" value="True"/>
    </properties>
   </tile>
+ </tileset>
+ <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="../Tilerpg/character-tiles.png" width="96" height="96"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -29,7 +43,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt1DEOgCAMBVAuK7P3n1gcumkEsZD3kp8wdGhDoRQAAAAAAAAAoEf9u4FBss5RXySj3eYYXTtb7Ot4cF5hji/qZ4m7cncf2fdql/cRc15Z4b9q+0sZKQ==
+   eJzt1MsKgCAQBVB/1mrZ/68iMAoxogc0xTkwiDKLOyimBAAAAAAAAADc0b0d4CFR5+guVER/m2PWl3Wo9q3eaLa5clqz5+q81R9JK1d9D0f9EWzfyt4d5EZvNGeyfWGOpcZSX/ivJj5GGy0=
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -39,4 +53,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="Characters" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztziEBAAAIA7D3z0YozBNgMFuCJQAAAAAAAAAAcDffAYBayf0AzQ==
+  </data>
+ </layer>
 </map>
