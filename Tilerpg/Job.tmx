@@ -32,6 +32,14 @@
     <property name="OutJob" value="True"/>
    </properties>
   </tile>
+  <tile id="20">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
  </tileset>
  <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
   <image source="../Tilerpg/character-tiles.png" width="96" height="96"/>

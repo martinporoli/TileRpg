@@ -5,18 +5,12 @@
  </tileset>
  <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
   <image source="meta-tiles.png" width="320" height="320"/>
-  <tile id="0">
-   <properties>
-    <property name="Collidable" value="True"/>
-    <property name="GirlTalk" value="True"/>
-   </properties>
-  </tile>
   <tile id="1">
    <properties>
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
-  <tile id="3">
+  <tile id="2">
    <properties>
     <property name="stopTalk" value="True"/>
    </properties>
@@ -24,6 +18,12 @@
   <tile id="11">
    <properties>
     <property name="OutGirlHome" value="True"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="GirlTalk" value="True"/>
    </properties>
   </tile>
  </tileset>
@@ -37,7 +37,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.49">
   <data encoding="base64" compression="zlib">
-   eJzt0zEKgDAQBMD7rJLS/1cSiI0oglU2zMByxVVbbBUAAAAAAAAAwNz2j6RYqUfXxt0qu0fXbjetx1OXqrwef36zedtB4j6uHCMJOz8B3dgRpA==
+   eJzt0zEKgDAQBMB7rWlt/b0EYiOKYJUNM7BccdUWWwUAAAAAAAAAMLftIylW6tG1cY/K7tG1203r8dSlKq/Hn99s3naQuI8r+0jCzk8p/xG0
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
