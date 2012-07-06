@@ -10,9 +10,11 @@
 		90303D6415A70B51003D9885 /* GubbeTranar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6315A70B51003D9885 /* GubbeTranar.png */; };
 		90303D6715A70B72003D9885 /* GubbePluggar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6615A70B72003D9885 /* GubbePluggar.png */; };
 		90303D6915A70B7B003D9885 /* GubbeDricker.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6815A70B7B003D9885 /* GubbeDricker.png */; };
-		90303D6B15A70CCA003D9885 /* school.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6A15A70CCA003D9885 /* school.tmx */; };
-		90303D6D15A70D77003D9885 /* Job.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6C15A70D77003D9885 /* Job.tmx */; };
-		90303D6F15A70E84003D9885 /* shop.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6E15A70E84003D9885 /* shop.tmx */; };
+		90303D7115A712D2003D9885 /* school.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D7015A712D2003D9885 /* school.tmx */; };
+		90303D7615A712EA003D9885 /* GirlsHome.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D7215A712E9003D9885 /* GirlsHome.tmx */; };
+		90303D7715A712EA003D9885 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D7315A712E9003D9885 /* home.tmx */; };
+		90303D7815A712EA003D9885 /* Job.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D7415A712E9003D9885 /* Job.tmx */; };
+		90303D7915A712EA003D9885 /* shop.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90303D7515A712EA003D9885 /* shop.tmx */; };
 		905036B615A7054A00F09749 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B515A7054A00F09749 /* QuartzCore.framework */; };
 		905036B815A7054A00F09749 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B715A7054A00F09749 /* OpenGLES.framework */; };
 		905036BA15A7054A00F09749 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B915A7054A00F09749 /* OpenAL.framework */; };
@@ -160,9 +162,7 @@
 		90B9499C15A70AB0007F67C8 /* foregroundtilesW2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498615A70AB0007F67C8 /* foregroundtilesW2.png */; };
 		90B9499D15A70AB0007F67C8 /* foregroundW1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498715A70AB0007F67C8 /* foregroundW1.png */; };
 		90B9499E15A70AB0007F67C8 /* GirlHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498815A70AB0007F67C8 /* GirlHome.png */; };
-		90B9499F15A70AB0007F67C8 /* GirlsHome.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498915A70AB0007F67C8 /* GirlsHome.tmx */; };
 		90B949A015A70AB0007F67C8 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498A15A70AB0007F67C8 /* Home.png */; };
-		90B949A115A70AB0007F67C8 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498B15A70AB0007F67C8 /* home.tmx */; };
 		90B949A215A70AB0007F67C8 /* Job.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498C15A70AB0007F67C8 /* Job.png */; };
 		90B949A415A70AB0007F67C8 /* landskap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498E15A70AB0007F67C8 /* landskap2.png */; };
 		90B949A615A70AB0007F67C8 /* landskapem.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499015A70AB0007F67C8 /* landskapem.png */; };
@@ -177,9 +177,11 @@
 		90303D6315A70B51003D9885 /* GubbeTranar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeTranar.png; sourceTree = "<group>"; };
 		90303D6615A70B72003D9885 /* GubbePluggar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbePluggar.png; sourceTree = "<group>"; };
 		90303D6815A70B7B003D9885 /* GubbeDricker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeDricker.png; sourceTree = "<group>"; };
-		90303D6A15A70CCA003D9885 /* school.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = school.tmx; sourceTree = "<group>"; };
-		90303D6C15A70D77003D9885 /* Job.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Job.tmx; sourceTree = "<group>"; };
-		90303D6E15A70E84003D9885 /* shop.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shop.tmx; sourceTree = "<group>"; };
+		90303D7015A712D2003D9885 /* school.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = school.tmx; sourceTree = "<group>"; };
+		90303D7215A712E9003D9885 /* GirlsHome.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GirlsHome.tmx; sourceTree = "<group>"; };
+		90303D7315A712E9003D9885 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
+		90303D7415A712E9003D9885 /* Job.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Job.tmx; sourceTree = "<group>"; };
+		90303D7515A712EA003D9885 /* shop.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shop.tmx; sourceTree = "<group>"; };
 		905036B115A7054A00F09749 /* Tilerpg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tilerpg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905036B515A7054A00F09749 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		905036B715A7054A00F09749 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -462,9 +464,7 @@
 		90B9498615A70AB0007F67C8 /* foregroundtilesW2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundtilesW2.png; sourceTree = "<group>"; };
 		90B9498715A70AB0007F67C8 /* foregroundW1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundW1.png; sourceTree = "<group>"; };
 		90B9498815A70AB0007F67C8 /* GirlHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlHome.png; sourceTree = "<group>"; };
-		90B9498915A70AB0007F67C8 /* GirlsHome.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GirlsHome.tmx; sourceTree = "<group>"; };
 		90B9498A15A70AB0007F67C8 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
-		90B9498B15A70AB0007F67C8 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
 		90B9498C15A70AB0007F67C8 /* Job.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Job.png; sourceTree = "<group>"; };
 		90B9498E15A70AB0007F67C8 /* landskap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landskap2.png; sourceTree = "<group>"; };
 		90B9499015A70AB0007F67C8 /* landskapem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landskapem.png; sourceTree = "<group>"; };
@@ -942,18 +942,18 @@
 				90B9498615A70AB0007F67C8 /* foregroundtilesW2.png */,
 				90B9498715A70AB0007F67C8 /* foregroundW1.png */,
 				90B9498815A70AB0007F67C8 /* GirlHome.png */,
-				90B9498915A70AB0007F67C8 /* GirlsHome.tmx */,
 				90B9498A15A70AB0007F67C8 /* Home.png */,
-				90B9498B15A70AB0007F67C8 /* home.tmx */,
 				90B9498C15A70AB0007F67C8 /* Job.png */,
 				90B9498E15A70AB0007F67C8 /* landskap2.png */,
 				90B9499015A70AB0007F67C8 /* landskapem.png */,
 				90B9499115A70AB0007F67C8 /* meta-tiles.png */,
 				90B9499215A70AB0007F67C8 /* school.png */,
 				90B9499415A70AB0007F67C8 /* shop.png */,
-				90303D6C15A70D77003D9885 /* Job.tmx */,
-				90303D6E15A70E84003D9885 /* shop.tmx */,
-				90303D6A15A70CCA003D9885 /* school.tmx */,
+				90303D7215A712E9003D9885 /* GirlsHome.tmx */,
+				90303D7315A712E9003D9885 /* home.tmx */,
+				90303D7415A712E9003D9885 /* Job.tmx */,
+				90303D7515A712EA003D9885 /* shop.tmx */,
+				90303D7015A712D2003D9885 /* school.tmx */,
 				90B9499715A70AB0007F67C8 /* World1.tmx */,
 				90B9499815A70AB0007F67C8 /* World2.tmx */,
 			);
@@ -1045,9 +1045,7 @@
 				90B9499C15A70AB0007F67C8 /* foregroundtilesW2.png in Resources */,
 				90B9499D15A70AB0007F67C8 /* foregroundW1.png in Resources */,
 				90B9499E15A70AB0007F67C8 /* GirlHome.png in Resources */,
-				90B9499F15A70AB0007F67C8 /* GirlsHome.tmx in Resources */,
 				90B949A015A70AB0007F67C8 /* Home.png in Resources */,
-				90B949A115A70AB0007F67C8 /* home.tmx in Resources */,
 				90B949A215A70AB0007F67C8 /* Job.png in Resources */,
 				90B949A415A70AB0007F67C8 /* landskap2.png in Resources */,
 				90B949A615A70AB0007F67C8 /* landskapem.png in Resources */,
@@ -1059,9 +1057,11 @@
 				90303D6415A70B51003D9885 /* GubbeTranar.png in Resources */,
 				90303D6715A70B72003D9885 /* GubbePluggar.png in Resources */,
 				90303D6915A70B7B003D9885 /* GubbeDricker.png in Resources */,
-				90303D6B15A70CCA003D9885 /* school.tmx in Resources */,
-				90303D6D15A70D77003D9885 /* Job.tmx in Resources */,
-				90303D6F15A70E84003D9885 /* shop.tmx in Resources */,
+				90303D7115A712D2003D9885 /* school.tmx in Resources */,
+				90303D7615A712EA003D9885 /* GirlsHome.tmx in Resources */,
+				90303D7715A712EA003D9885 /* home.tmx in Resources */,
+				90303D7815A712EA003D9885 /* Job.tmx in Resources */,
+				90303D7915A712EA003D9885 /* shop.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

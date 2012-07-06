@@ -10,11 +10,25 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="2">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="OutShop" value="True"/>
    </properties>
   </tile>
+  <tile id="20">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="ShopTalk" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -23,7 +37,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.53">
   <data encoding="base64" compression="zlib">
-   eJzt1CkOACEQBEBei+b/ag2KkL1UD6lK2qCmCUNrAAAAAAAAAAD19ZlE/WfSfJ0rucfu7O7u03u8ne+EHhXe1dN8FfZ8zZhJ/68um/AUzQ==
+   eJzt1EEKwCAMBEBfa6+9+vsipFBEW+gpwgwEFRSyBCwFAAAAAAAAAGB/NSqj+rOyefZ1xNqG8+p+JmNPvfcW66rn7Dn6/p7BbBazN1mMObqvDLvkeLubOceszqjs/9UFnZkXxA==
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -33,4 +47,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="foreground" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztziEBAAAIA7D370Yn7DUGsyVYAgAAAAAAAAAAN/MdACgL0cEAzg==
+  </data>
+ </layer>
 </map>
