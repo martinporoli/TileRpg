@@ -250,7 +250,7 @@
 {
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self 
                                                      priority:0 swallowsTouches:YES];
-}
+}//hejhej
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
