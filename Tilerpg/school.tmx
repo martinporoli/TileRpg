@@ -22,11 +22,6 @@
     <property name="Study" value="True"/>
    </properties>
   </tile>
-  <tile id="3">
-   <properties>
-    <property name="stopTalk" value="True"/>
-   </properties>
-  </tile>
   <tile id="11">
    <properties>
     <property name="strength" value="True"/>
@@ -43,13 +38,9 @@
    eJzt0c0KwjAQReFaqFtd2bqqP+//jkZIYBgaOjBeoXA+OFSrkqsOAwAAAAAAAAAAAIA9jz+llt0XTS27L5padl80tey+aGrZfdHUsvuiqWX3RVOzZ42lZ72O5vm59HLX7/27aan3/P6Wmj3rUlpLt9pau3aub1P7nN/fUrNnnX6Q399Ss2f1tk2d69G+x9H+j3lj1+web73Hvu73t9R659r2futIah+lxCeJ
   </data>
  </layer>
- <layer name="Meta" width="50" height="50" opacity="0.38">
+ <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-<<<<<<< HEAD
    eJzt1MEKgCAMAFB/Nq957e+7dOiQYlE64j0YExTdEJYSAAAAAAAAAEBM+cWYqVXXWslR+yin9ZN6ovQR6Z4v3l8q+e49I/zpP65qyB1nevdHaM2f7YjIc3cHDGcfww==
-=======
-   eJzt1MEKgCAMANB+NuvYtb+PoCAkxSJsh/dgTFDmdtkwAAAAAAAAAADElD6MP9X6Ggs56hzL5Xz2Mz2sEWGO3Jzlt3V6Kv2/zzAe5zw/qdPLV/9HmOOuh9TwpvW+h9r+WY+IvHc3jjohRA==
->>>>>>> c2292c4cfb0de580324d6fa94250496968957cc7
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
