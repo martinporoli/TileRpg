@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="GirlHome" tilewidth="32" tileheight="32">
+  <image source="GirlHome.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="GirlTalk" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="OutGirlHome" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1LEKgzAUBdC3V3DqXnFS2///PSNkUrOIhUTOgUsyvCGXB4kAAAAAAAAAgOvmG1IDPfT4h7N3dSljypLv33y21mNK+eVzyyflXZitucerkNZ69PGMHk/ZxxDHDkNhtuYe+7208O+uLF4bPA==
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.49">
+  <data encoding="base64" compression="zlib">
+   eJzt0zEKgDAQBMD7rJLS/1cSiI0oglU2zMByxVVbbBUAAAAAAAAAwNz2j6RYqUfXxt0qu0fXbjetx1OXqrwef36zedtB4j6uHCMJOz8B3dgRpA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="240" y="1552">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+  <object x="257" y="1544" width="8" height="9"/>
+ </objectgroup>
+ <layer name="foreground" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztziEBAAAIA7D3b0YrzBNgMFuCJQAAAAAAAAAAcDffAYBavE0Ayg==
+  </data>
+ </layer>
+</map>

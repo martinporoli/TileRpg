@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="shop" tilewidth="32" tileheight="32">
+  <image source="../../shop.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0r0KgzAYhtHPWiehnfqz1dX7v8FmSKC0gqEgyXAOPBh0eQNGAAAAAAAAAABwtCF1zc8xdc5N+f34cR4abawxpy6VzY021jh9dU89cs+N770q+27xu3mrXpV9r9i/w9JmYpWycY39OyxNFv6v93+oeAMIsAJU
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.53">
+  <data encoding="base64" compression="zlib">
+   eJzt1LENwCAMBECmZf8RaCgDCane6E5yQ/WPMK0BAAAAAAAAANTX5yTqPyfNaa7kHk9nu7tP7/E13w09Kryrt3wV9ny1E+n/1QAKsBPt
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="271" y="1552">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,17 +1,13 @@
-//
-//  HelloWorldLayer.h
-//  Tilerpg
-//
-//  Created by T2 on 7/6/12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
-//
-
-
 #import <GameKit/GameKit.h>
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+@interface Prat:CCLayer
 
+@end
+@interface StatLayer:CCLayer
+
+@end
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {

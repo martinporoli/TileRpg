@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="landskapem" tilewidth="32" tileheight="32">
+  <image source="landskapem.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="jump" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="NewWorld" value="True"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="Coin" value="True"/>
+    <property name="Collidale" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="201" name="foregroundW1" tilewidth="32" tileheight="32">
+  <image source="foregroundW1.png" width="62" height="64"/>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmM0OgjAQhJFwU3vT9qbv/5TCgaRpOtvusm3B7GESFbbMtz8FnKdpmk0mk8lkMplMl9Yto9GekK+lcPxsLKkXz/A9guWIN0qIu5d/15BNm6eHvx48W3wgai+RK+Qq/j29bo963Fc9KvRkcGjWpUfP13K0mPkjvXYmjl718ETclTg065HO8FPoPxD52fPeigPd76j9CXGmHnN+W3AswrzXMCA54rzR84ByX6v42VmTA52f9ji1Hmff1tqfNGNqvGp4l3jixHFz3qIe8fcQfUY5reHJ7emataByh2YYxafPuLXrozhNjtycluKpa1Bzr12fXN+W9kcOyyiOHEupLtL+bcmye+D2WG+WIz1Bvb+W1tH+D2WLfa16T7j/0aygfdgzc6fF8Vn1FdaFUw9Of3EZUX3Re0TqRcIhZaLWCcy1NOrRQi7KPTV/Z+fQ7Nn0mI80iksqDzTalxbLaE8m07/rBxTCFc8=
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.37">
+  <data encoding="base64" compression="zlib">
+   eJztlsEKAyEMRP1aey39/0PpoSBiJlEn6koCQ9fuGuclumxOKeVQKBQKhUKhwzUS9fw6z6kcrLw7ObTnevvqzcHeeztYvPxqscr/KrbTe7Dy7KTE59FqhfhW9OPVIVQjy34+ZW+VHPUaHv3wYsrCdelVmjfj+waOW/rx+22d1VH/2n71PB+t0N5JyEc51p5hcDDDmvMJHLPz2RzW9xurLqxzMTNHGiOvDO8j9bX8n6p7iIPNVK/RGiPfyOM/pO8vj35oIdUNcVjyr+aQ1pXu19e9edm9Ql4RS4vLkwPlbV1L62qeLOHVBwvrKSxSnnL8FA7kveesWP2wGSQOxOLJUcZbWYtVmxkOy/q9HNb6SDHL4aEbOEbDkuOzkYtdj92+WCy7PYVCt+sLptCw3A==
+  </data>
+ </layer>
+ <layer name="foreground" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzjEBAAAEADD9m5FKAo+DZ0uwCAAAAAAAAACY5XcAWKvvAMCxBuvOAZQ=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="272" y="1295">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+  <object name="SpawnPoint2" x="1392" y="1264">
+   <properties>
+    <property name="playerSpawn2" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

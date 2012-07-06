@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="bar-tiles" tilewidth="32" tileheight="32">
+  <image source="bar-tiles.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="17" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="Drinking" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="outBar" value="True"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="BarTalk" value="True"/>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="117" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
+ </tileset>
+ <layer name="background" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztkEsKgDAMRFvFTxq9/3WdRQaCC2HEhYs8eJAGOkzbWlEUKh2ecIq5xzyns4JDe9DFvAOOuLvANdzhFnsFS3kW+dxxrzBu5nx2V2AfT5mcmf0Wvvkr2O+vecp/XdkdAhE=
+  </data>
+ </layer>
+ <layer name="Meta" width="20" height="20" opacity="0.34">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUkALkiMSkmgcDIlBaFo8aQuZhMx9kniCSPLnmIbtRhIA6Ys1DN4tc83CxSTUPWzxSEsfEuI8cADJDBoqpZR42Ni4AAKI+BcA=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="20" height="20">
+  <object name="SpawnPoint" x="304" y="559">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="foreground" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDEZQPtAOGAWjgAAAAECLAHg=
+  </data>
+ </layer>
+</map>
