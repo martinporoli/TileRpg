@@ -14,6 +14,7 @@
 		9049AC7215A715B60082A167 /* GirlsHome.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC6F15A715B60082A167 /* GirlsHome.tmx */; };
 		9049AC7315A715B60082A167 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC7015A715B60082A167 /* home.tmx */; };
 		9049AC7415A715B60082A167 /* shop.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC7115A715B60082A167 /* shop.tmx */; };
+		9049AC7C15A71DD40082A167 /* statRuta.png in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC7B15A71DD40082A167 /* statRuta.png */; };
 		905036B615A7054A00F09749 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B515A7054A00F09749 /* QuartzCore.framework */; };
 		905036B815A7054A00F09749 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B715A7054A00F09749 /* OpenGLES.framework */; };
 		905036BA15A7054A00F09749 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B915A7054A00F09749 /* OpenAL.framework */; };
@@ -153,7 +154,6 @@
 		90B9497C15A7081A007F67C8 /* loadGame2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9496B15A7081A007F67C8 /* loadGame2.png */; };
 		90B9497D15A7081A007F67C8 /* newGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9496C15A7081A007F67C8 /* newGame.png */; };
 		90B9497E15A7081A007F67C8 /* newGame2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9496D15A7081A007F67C8 /* newGame2.png */; };
-		90B9497F15A7081A007F67C8 /* statRuta.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9496E15A7081A007F67C8 /* statRuta.png */; };
 		90B9498015A7081A007F67C8 /* storBubbla.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9496F15A7081A007F67C8 /* storBubbla.png */; };
 		90B9499915A70AB0007F67C8 /* bar-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498315A70AB0007F67C8 /* bar-tiles.png */; };
 		90B9499A15A70AB0007F67C8 /* BarMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9498415A70AB0007F67C8 /* BarMap.tmx */; };
@@ -181,6 +181,7 @@
 		9049AC6F15A715B60082A167 /* GirlsHome.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GirlsHome.tmx; sourceTree = "<group>"; };
 		9049AC7015A715B60082A167 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
 		9049AC7115A715B60082A167 /* shop.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shop.tmx; sourceTree = "<group>"; };
+		9049AC7B15A71DD40082A167 /* statRuta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statRuta.png; sourceTree = "<group>"; };
 		905036B115A7054A00F09749 /* Tilerpg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tilerpg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905036B515A7054A00F09749 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		905036B715A7054A00F09749 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -455,7 +456,6 @@
 		90B9496B15A7081A007F67C8 /* loadGame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadGame2.png; sourceTree = "<group>"; };
 		90B9496C15A7081A007F67C8 /* newGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newGame.png; sourceTree = "<group>"; };
 		90B9496D15A7081A007F67C8 /* newGame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newGame2.png; sourceTree = "<group>"; };
-		90B9496E15A7081A007F67C8 /* statRuta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statRuta.png; sourceTree = "<group>"; };
 		90B9496F15A7081A007F67C8 /* storBubbla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storBubbla.png; sourceTree = "<group>"; };
 		90B9498315A70AB0007F67C8 /* bar-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-tiles.png"; sourceTree = "<group>"; };
 		90B9498415A70AB0007F67C8 /* BarMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BarMap.tmx; sourceTree = "<group>"; };
@@ -927,7 +927,7 @@
 				90B9496B15A7081A007F67C8 /* loadGame2.png */,
 				90B9496C15A7081A007F67C8 /* newGame.png */,
 				90B9496D15A7081A007F67C8 /* newGame2.png */,
-				90B9496E15A7081A007F67C8 /* statRuta.png */,
+				9049AC7B15A71DD40082A167 /* statRuta.png */,
 				90B9496F15A7081A007F67C8 /* storBubbla.png */,
 			);
 			name = Pics;
@@ -970,6 +970,7 @@
 				905036AD15A7054A00F09749 /* Sources */,
 				905036AE15A7054A00F09749 /* Frameworks */,
 				905036AF15A7054A00F09749 /* Resources */,
+				9049AC7A15A7179A0082A167 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1037,7 +1038,6 @@
 				90B9497C15A7081A007F67C8 /* loadGame2.png in Resources */,
 				90B9497D15A7081A007F67C8 /* newGame.png in Resources */,
 				90B9497E15A7081A007F67C8 /* newGame2.png in Resources */,
-				90B9497F15A7081A007F67C8 /* statRuta.png in Resources */,
 				90B9498015A7081A007F67C8 /* storBubbla.png in Resources */,
 				90B9499915A70AB0007F67C8 /* bar-tiles.png in Resources */,
 				90B9499A15A70AB0007F67C8 /* BarMap.tmx in Resources */,
@@ -1062,10 +1062,27 @@
 				9049AC7215A715B60082A167 /* GirlsHome.tmx in Resources */,
 				9049AC7315A715B60082A167 /* home.tmx in Resources */,
 				9049AC7415A715B60082A167 /* shop.tmx in Resources */,
+				9049AC7C15A71DD40082A167 /* statRuta.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9049AC7A15A7179A0082A167 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Developer/iphoneentitlements401/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		905036AD15A7054A00F09749 /* Sources */ = {
@@ -1225,6 +1242,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1244,6 +1262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tilerpg/Prefix.pch;

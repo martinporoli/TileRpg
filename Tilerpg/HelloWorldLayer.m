@@ -18,6 +18,7 @@
 {
     if (self = [super init])
     {
+        size = [[CCDirector sharedDirector] winSize];
         pratBubbla = [CCSprite spriteWithFile:@"storBubbla.png"];
         [self addChild:pratBubbla];
         pratBubbla.position = ccp(-300,-300);
@@ -34,7 +35,13 @@
         [pratMenu alignItemsVertically];
         [self addChild:pratMenu];
         pratMenu.position=ccp(-500,-500);
-        //hejß
+        [pratBubbla setScaleX:size.width/1024];
+        [pratBubbla setScaleY:size.height/768];
+        [pratLabel setScaleX:size.width/1024];
+        [pratLabel setScaleY:size.height/768];
+        [pratMenu setScaleX:size.width/1024];
+        [pratMenu setScaleY:size.height/768];
+
     }
     return self;
 }
@@ -64,6 +71,7 @@
 {
     pratBubbla.position = ccp(-300,-300);
     pratLabel.position = ccp(-100,-100);
+    pratMenu.position = ccp(-500,-500);
 }
 @end
 @implementation StatLayer
@@ -83,10 +91,10 @@
         [self addChild:statLabel];
         
         CGSize size = [[CCDirector sharedDirector] winSize];
-        [ruta setScaleX: size.width/1000];
-        [ruta setScaleY: size.height/1000];
-        [statLabel setScaleX: size.width/1000];
-        [statLabel setScaleY: size.height/1000];
+        [ruta setScaleX: size.width/1024];
+        [ruta setScaleY: size.height/768];
+        [statLabel setScaleX: size.width/1024];
+        [statLabel setScaleY: size.height/768];
         
     }
     return self;
@@ -244,7 +252,7 @@
     CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
     viewPoint = ccpSub(centerOfView, actualPosition);
     self.position = viewPoint;
-    [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3):energy:money:Int:Str:Cha:days];
+    [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3-(40*winSize.height/768)):energy:money:Int:Str:Cha:days];
 }
 
 -(void) registerWithTouchDispatcher
@@ -385,9 +393,9 @@
                     money+=(Int/2)+20;
                 }
             }
-            NSString *work2 = [properties valueForKey:@"WorkTalk"];
+            NSString *work2 = [properties valueForKey:@"JobTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
-                [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
+                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
                 [prat stringChanged:@"You better work!":@"Jobba hårt":@"Jobba inte så hårt"];
             }
             NSString *study = [properties valueForKey:@"study"];
@@ -400,27 +408,19 @@
             }
             NSString *schoolTalk = [properties valueForKey:@"SchoolTalk"];
             if (schoolTalk && [schoolTalk compare:@"True"] == NSOrderedSame) {
-                if(energy>=20&&money>=20)
-                {
-                    [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
-                    [prat stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good"];
-                }
+                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [prat stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good"];
+
             }
             NSString *barTalk = [properties valueForKey:@"BarTalk"];
             if (barTalk && [barTalk compare:@"True"] == NSOrderedSame) {
-                if(energy>=30&&money>=30)
-                {
-                    [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
-                    [prat stringChanged:@"You like beer?":@"Drink":@"Drink more"];
-                }
+                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [prat stringChanged:@"You like beer?":@"Drink":@"Drink more"];
             }
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
-                if(energy>=30&&money>=30)
-                {
-                    [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
-                    [prat stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun from outer space"];
-                }
+                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [prat stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun from outer space"];
             }
             NSString *workOut = [properties valueForKey:@"strength"];
             if (workOut && [workOut compare:@"True"] == NSOrderedSame) {
