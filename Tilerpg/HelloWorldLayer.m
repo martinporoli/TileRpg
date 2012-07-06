@@ -388,7 +388,7 @@
             NSString *work2 = [properties valueForKey:@"WorkTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
                 [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
-                [prat stringChanged:@"JOBBA BIATCH":@"Jobba hårt":@"Jobba inte så hårt"];
+                [prat stringChanged:@"You better work!":@"Jobba hårt":@"Jobba inte så hårt"];
             }
             NSString *study = [properties valueForKey:@"study"];
             if (study && [study compare:@"True"] == NSOrderedSame) {
@@ -402,18 +402,24 @@
             if (schoolTalk && [schoolTalk compare:@"True"] == NSOrderedSame) {
                 if(energy>=20&&money>=20)
                 {
-                    energy-=20;
-                    Int+=10;
-                    money-=20;
+                    [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
+                    [prat stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good"];
                 }
             }
             NSString *barTalk = [properties valueForKey:@"BarTalk"];
             if (barTalk && [barTalk compare:@"True"] == NSOrderedSame) {
                 if(energy>=30&&money>=30)
                 {
-                    energy-=30;
-                    Cha+=15;
-                    money-=30;
+                    [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
+                    [prat stringChanged:@"You like beer?":@"Drink":@"Drink more"];
+                }
+            }
+            NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
+            if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
+                if(energy>=30&&money>=30)
+                {
+                    [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
+                    [prat stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun from outer space"];
                 }
             }
             NSString *workOut = [properties valueForKey:@"strength"];
