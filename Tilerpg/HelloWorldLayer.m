@@ -350,7 +350,7 @@
             if (OutShop && [OutShop compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];
                 [self loadWorld:@"World2.tmx":@"SpawnPointShop"];
-                return;
+                return;//gygtfv
             }
             
             NSString *jump = [properties valueForKey:@"jump"];
