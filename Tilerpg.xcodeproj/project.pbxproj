@@ -15,6 +15,7 @@
 		9049AC7315A715B60082A167 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC7015A715B60082A167 /* home.tmx */; };
 		9049AC7415A715B60082A167 /* shop.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC7115A715B60082A167 /* shop.tmx */; };
 		9049AC7C15A71DD40082A167 /* statRuta.png in Resources */ = {isa = PBXBuildFile; fileRef = 9049AC7B15A71DD40082A167 /* statRuta.png */; };
+		9049AC8515AACC010082A167 /* ShortestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9049AC8415AACC010082A167 /* ShortestPath.m */; };
 		905036B615A7054A00F09749 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B515A7054A00F09749 /* QuartzCore.framework */; };
 		905036B815A7054A00F09749 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B715A7054A00F09749 /* OpenGLES.framework */; };
 		905036BA15A7054A00F09749 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905036B915A7054A00F09749 /* OpenAL.framework */; };
@@ -182,6 +183,8 @@
 		9049AC7015A715B60082A167 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
 		9049AC7115A715B60082A167 /* shop.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shop.tmx; sourceTree = "<group>"; };
 		9049AC7B15A71DD40082A167 /* statRuta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statRuta.png; sourceTree = "<group>"; };
+		9049AC8315AACC010082A167 /* ShortestPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortestPath.h; sourceTree = "<group>"; };
+		9049AC8415AACC010082A167 /* ShortestPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortestPath.m; sourceTree = "<group>"; };
 		905036B115A7054A00F09749 /* Tilerpg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tilerpg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905036B515A7054A00F09749 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		905036B715A7054A00F09749 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -535,6 +538,8 @@
 				9050383E15A7054D00F09749 /* AppDelegate.m */,
 				9050384015A7054D00F09749 /* HelloWorldLayer.h */,
 				9050384115A7054D00F09749 /* HelloWorldLayer.m */,
+				9049AC8315AACC010082A167 /* ShortestPath.h */,
+				9049AC8415AACC010082A167 /* ShortestPath.m */,
 				905036C815A7054A00F09749 /* Resources */,
 				905036E015A7054A00F09749 /* libs */,
 				9050383915A7054D00F09749 /* Supporting Files */,
@@ -1192,6 +1197,7 @@
 				9050383C15A7054D00F09749 /* main.m in Sources */,
 				9050383F15A7054D00F09749 /* AppDelegate.m in Sources */,
 				9050384215A7054D00F09749 /* HelloWorldLayer.m in Sources */,
+				9049AC8515AACC010082A167 /* ShortestPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
