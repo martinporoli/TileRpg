@@ -5,75 +5,6 @@
 #import "AppDelegate.h"
 
 #pragma mark - HelloWorldLayer
-@implementation Prat
-{
-    CGSize size;
-    CCLabelTTF *pratLabel;
-    CCSprite *pratBubbla;
-    CCMenu * pratMenu;
-    CCLabelTTF *Op1;
-    CCLabelTTF *Op2;
-}
--(id) init
-{
-    if (self = [super init])
-    {
-        size = [[CCDirector sharedDirector] winSize];
-        pratBubbla = [CCSprite spriteWithFile:@"storBubbla.png"];
-        [self addChild:pratBubbla];
-        pratBubbla.position = ccp(-300,-300);
-        pratLabel = [CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(500, 175) hAlignment:CCTextAlignmentCenter lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25.0];
-        pratLabel.color = ccc3(0, 0, 0);
-        [self addChild:pratLabel];
-        Op1 = [CCLabelTTF labelWithString:@"Cool Story Bro" fontName:@"Helvetica-Bold" fontSize:25];
-        Op2 = [CCLabelTTF labelWithString:@"Cool Story Bro" fontName:@"Helvetica-Bold" fontSize:25];
-        Op1.color=ccc3(255,0,0);
-        Op2.color=ccc3(255,0,0);
-        CCMenuItem *item1 = [CCMenuItemLabel itemWithLabel:Op1 target:self selector:@selector(Option1:)];
-        CCMenuItem *item2 = [CCMenuItemLabel itemWithLabel:Op2 target:self selector:@selector(Option2:)];
-        pratMenu = [CCMenu menuWithItems:item1, item2, nil];
-        [pratMenu alignItemsVertically];
-        [self addChild:pratMenu];
-        pratMenu.position=ccp(-500,-500);
-        [pratBubbla setScaleX:size.width/1024];
-        [pratBubbla setScaleY:size.height/768];
-        [pratLabel setScaleX:size.width/1024];
-        [pratLabel setScaleY:size.height/768];
-        [pratMenu setScaleX:size.width/1024];
-        [pratMenu setScaleY:size.height/768];
-
-    }
-    return self;
-}
-
--(void)Option1:(id)sender{
-    NSLog(@"Option 1");
-}
--(void)Option2:(id)sender{
-    NSLog(@"Option 2");
-}
-
-
--(void)stringChanged:(NSString*)prat:(NSString*)alt1:(NSString*)alt2
-{
-    [pratLabel setString:prat];
-    [Op1 setString:alt1];
-    [Op2 setString:alt2];
-}
--(void)showBubbla:(CGPoint)point;
-{
-    size = [[CCDirector sharedDirector] winSize];
-    pratBubbla.position = point;
-    pratLabel.position =point;
-    pratMenu.position = point;
-}
--(void)hideBubbla
-{
-    pratBubbla.position = ccp(-300,-300);
-    pratLabel.position = ccp(-100,-100);
-    pratMenu.position = ccp(-500,-500);
-}
-@end
 @implementation StatLayer
 {
     CCLayer * layer;
@@ -116,13 +47,17 @@
     CCTMXLayer * meta;
     CCSprite *player;
     int playerWalk,jumpAble,chestMoney;
-    int money,Int,Str,Cha,energy,days;
+    int money,Int,Str,Cha,energy,days,raise;
     StatLayer * stats;
-    Prat * prat;
     CGPoint viewPoint;
     CCMenu *menu;
     CGSize size;
-    
+    CCLabelTTF *pratLabel;
+    CCSprite *pratBubbla;
+    CCMenu * pratMenu;
+    CCLabelTTF *Op1;
+    CCLabelTTF *Op2;
+    int PratID;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -153,7 +88,29 @@
         menu = [CCMenu menuWithItems:item1, item2, nil];
         [menu alignItemsVertically];
         [self addChild:menu];
-        
+        size = [[CCDirector sharedDirector] winSize];
+        pratBubbla = [CCSprite spriteWithFile:@"storBubbla.png"];
+        [self addChild:pratBubbla];
+        pratBubbla.position = ccp(-300,-300);
+        pratLabel = [CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(500, 175) hAlignment:CCTextAlignmentCenter lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25.0];
+        pratLabel.color = ccc3(0, 0, 0);
+        [self addChild:pratLabel];
+        Op1 = [CCLabelTTF labelWithString:@"Cool Story Bro" fontName:@"Helvetica-Bold" fontSize:25];
+        Op2 = [CCLabelTTF labelWithString:@"Cool Story Bro" fontName:@"Helvetica-Bold" fontSize:25];
+        Op1.color=ccc3(255,0,0);
+        Op2.color=ccc3(255,0,0);
+        CCMenuItem *item3 = [CCMenuItemLabel itemWithLabel:Op1 target:self selector:@selector(Option1:)];
+        CCMenuItem *item4 = [CCMenuItemLabel itemWithLabel:Op2 target:self selector:@selector(Option2:)];
+        pratMenu = [CCMenu menuWithItems:item3, item4, nil];
+        [pratMenu alignItemsVertically];
+        [self addChild:pratMenu];
+        pratMenu.position=ccp(-500,-500);
+        [pratBubbla setScaleX:size.width/1024];
+        [pratBubbla setScaleY:size.height/768];
+        [pratLabel setScaleX:size.width/1024];
+        [pratLabel setScaleY:size.height/768];
+        [pratMenu setScaleX:size.width/1024];
+        [pratMenu setScaleY:size.height/768];
     }
 	return self;
 }
@@ -168,8 +125,6 @@
     
     stats = [StatLayer node];
     [self addChild:stats];
-    prat = [Prat node];
-    [self addChild:prat];
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
@@ -195,6 +150,130 @@
 -(void)loadGame:(id)sender{
     NSLog(@"load the fuckin game");
 }
+
+-(void)Option1:(id)sender{
+    if(PratID==0)
+    {
+        if(Int>=25)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're a Regular Janitor!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 25 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==1)
+    {
+        if(Int>=50)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're the Cheif Janitor!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 50 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==2)
+    {
+        if(Int>=90)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're an assistant!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 90 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==3)
+    {
+        if(Int>=135)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're a junior copywriter!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 135 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==4)
+    {
+        if(Int>=180)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're a software engineer!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 180 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==5)
+    {
+        if(Int>=230)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're the product manager!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 230 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==6)
+    {
+        if(Int>=300)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're the vice president of the company!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 300 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==7)
+    {
+        if(Int>=360)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're the president of the company!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 360 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==8)
+    {
+        [self stringChanged:@"You're already the president" :@"" :@"" :-1];
+    }
+}
+-(void)Option2:(id)sender{
+    if(PratID<=8)
+    {
+        [self hideBubbla];
+    }
+}
+
+
+-(void)stringChanged:(NSString*)prat:(NSString*)alt1:(NSString*)alt2:(int)pratID
+{
+    [pratLabel setString:prat];
+    [Op1 setString:alt1];
+    [Op2 setString:alt2];
+    PratID=pratID;
+}
+-(void)showBubbla:(CGPoint)point;
+{
+    size = [[CCDirector sharedDirector] winSize];
+    pratBubbla.position = point;
+    pratLabel.position =point;
+    pratMenu.position = point;
+}
+-(void)hideBubbla
+{
+    pratBubbla.position = ccp(-300,-300);
+    pratLabel.position = ccp(-100,-100);
+    pratMenu.position = ccp(-500,-500);
+}
+
 
 -(void)loadWorld:(NSString*)world:spawn
 {
@@ -387,16 +466,39 @@
             }
             NSString *work = [properties valueForKey:@"Work"];
             if (work && [work compare:@"True"] == NSOrderedSame) {
-                if(energy>19)
+                if(energy>=25)
                 {
-                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    energy-=20;
-                    money+=(Int/2)+20;
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    energy-=25;
+                    if(raise==0)
+                    {
+                        money+=20;
+                    }
+                    if(raise==1)
+                    {
+                        money+=45;
+                    }
+                    if(raise==2)
+                    {
+                        money+=90;
+                    }
+                    if(raise==3)
+                    {
+                        money+=150;
+                    }
+                    if(raise==4)
+                    {
+                        money+=250;
+                    }
+                    if(raise==5)
+                    {
+                        money+=500;
+                    }
                 }
             }
             NSString *work2 = [properties valueForKey:@"JobTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
-                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"You better work!":@"Jobba hårt":@"Jobba inte så hårt"];
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"What do you want?":@"Ask for a raise":@"Nothing":raise];
             }
             NSString *study = [properties valueForKey:@"study"];
             if (study && [study compare:@"True"] == NSOrderedSame) {
@@ -408,19 +510,19 @@
             }
             NSString *schoolTalk = [properties valueForKey:@"SchoolTalk"];
             if (schoolTalk && [schoolTalk compare:@"True"] == NSOrderedSame) {
-                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good"];
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good":8];
 
             }
             NSString *barTalk = [properties valueForKey:@"BarTalk"];
             if (barTalk && [barTalk compare:@"True"] == NSOrderedSame) {
-                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"You like beer?":@"Drink":@"Drink more"];
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"You like beer?":@"Drink":@"Drink more":9];
             }
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
-                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun from outer space"];
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun":10];
             }
             NSString *workOut = [properties valueForKey:@"strength"];
             if (workOut && [workOut compare:@"True"] == NSOrderedSame) {
@@ -433,7 +535,7 @@
             }
             NSString *stopTalk = [properties valueForKey:@"stopTalk"];
             if (stopTalk && [stopTalk compare:@"True"] == NSOrderedSame) {
-                [prat hideBubbla];
+                [self hideBubbla];
             }
             NSString *sleep = [properties valueForKey:@"sleep"];
             if (sleep && [sleep compare:@"True"] == NSOrderedSame) {
