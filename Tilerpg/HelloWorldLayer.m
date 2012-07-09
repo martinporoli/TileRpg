@@ -416,10 +416,7 @@
                                                      priority:0 swallowsTouches:YES];
 }//hejhej
 
--(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-	return YES;
-}
+
 
 -(void)setPlayerPosition:(CGPoint)position {
     
@@ -711,15 +708,18 @@
     
 }
 
--(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) walking
 {
-    
-    CGPoint touchLocation = [touch locationInView: [touch view]];		
-    touchLocation = [[CCDirector sharedDirector] convertToGL: touchLocation];
-    touchLocation = [self convertToNodeSpace:touchLocation];
-    
+    CGPoint playerTilePos = [self tileCoordForPosition:player.position];
+    CGPoint targetTilePos = [self tileCoordForPosition:targetPoint];
+    if(CGPointEqualToPoint(playerTilePos,targetTilePos))
+    {
+        [self unschedule:@selector(walking)];
+        return;
+    }
+    NSLog(@"%f%f%f%f",player.position.x,player.position.y,targetPoint.x,targetPoint.y);
     CGPoint playerPos = player.position;
-    CGPoint diff = ccpSub(touchLocation, playerPos);
+    CGPoint diff = ccpSub(targetPoint, playerPos);
     if (abs(diff.x) > abs(diff.y)) {
         if (diff.x > 0) {
             jumpAble=0;
@@ -788,7 +788,94 @@
     }
     
     [self setViewpointCenter:player.position];
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    targetPoint= [touch locationInView: [touch view]];		
+    targetPoint = [[CCDirector sharedDirector] convertToGL: targetPoint];
+    targetPoint = [self convertToNodeSpace:targetPoint];
+    CGPoint playerPos = player.position;
+    CGPoint diff = ccpSub(targetPoint, playerPos);
+    if (abs(diff.x) > abs(diff.y)) {
+        if (diff.x > 0) {
+            jumpAble=0;
+            playerPos.x += tileMap.tileSize.width;
+            if(playerWalk==0)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan2.png"]];
+                playerWalk=0;
+            }
+        } else {
+            jumpAble=0;
+            playerPos.x -= tileMap.tileSize.width;
+            if(playerWalk==0)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
+                playerWalk=0;
+            }
+        }    
+    } else {
+        if (diff.y > 0) {
+            jumpAble=0;
+            playerPos.y += tileMap.tileSize.height;
+            if(playerWalk==0)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak1.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak2.png"]];
+                playerWalk=0;
+            }
+        } else {
+            jumpAble=1;
+            playerPos.y -= tileMap.tileSize.height;
+            if(playerWalk==0)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe1.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe2.png"]];
+                playerWalk=0;
+            }
+        }
+    }
     
+    if (playerPos.x <= (tileMap.mapSize.width * tileMap.tileSize.width) &&
+        playerPos.y <= (tileMap.mapSize.height * tileMap.tileSize.height) &&
+        playerPos.y >= 0 &&
+        playerPos.x >= 0 ) 
+    {
+        [self setPlayerPosition:playerPos];
+        
+    }
+    
+    [self setViewpointCenter:player.position];
+   
+    [self schedule:@selector(walking) interval:0.2];
+    return YES;
+    
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    [self unschedule:@selector(walking)];
+    targetPoint.x=0;
+    targetPoint.y=0;
 }
 
 
