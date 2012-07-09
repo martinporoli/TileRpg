@@ -150,6 +150,7 @@
     [statLabel setScaleY: size.height/768];
     [saveMenu setScaleX: size.width/1024];
     [saveMenu setScaleY: size.height/768];
+    saveMenu.position=ccp(-500,-500);
 }
 -(void)loadGame:(id)sender{
     NSLog(@"load the fuckin game");
