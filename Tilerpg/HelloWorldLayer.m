@@ -126,7 +126,7 @@
     
     stats = [StatLayer node];
     [self addChild:stats];
-    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
     meta = [tileMap layerNamed:@"Meta"];
@@ -136,7 +136,7 @@
     
     CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
     NSAssert(objects != nil, @"'Objects' object group not found");
-    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPointHome"];        
     NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
     int x = [[spawnPoint valueForKey:@"x"] intValue];
     int y = [[spawnPoint valueForKey:@"y"] intValue];
@@ -252,6 +252,7 @@
             energy-=25;
             Int+=20;
             money-=50;
+            [self stringChanged:@"Well done! Come back if you need more help." :@"" :@"" :-1];
         }
         else {
             [self stringChanged:@"It costs 50 to be tutored" :@"" :@"" :-1];
