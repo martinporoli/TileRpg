@@ -268,6 +268,14 @@
         }
 
     }
+    if (PratID==12) {
+        if (Cha>49) {
+            [self stringChanged:@"Okay, I guess you´re kinda charmin" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"NO! You´re soo not my type! Beat it! Come back when you´ve increased your charm."  :@"" :@"" :-1];
+        }
+    }
 }
 -(void)Option2:(id)sender{
     if(PratID<=9)
@@ -569,6 +577,11 @@
                     money+=20;
                 }
                 }
+            }
+            NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
+            if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"Hi Boy!" :@"You wanna hang?" :@"" :12];
             }
             
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
