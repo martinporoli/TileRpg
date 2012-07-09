@@ -170,7 +170,7 @@
     [self addChild:stats];
     prat = [Prat node];
     [self addChild:prat];
-    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
     meta = [tileMap layerNamed:@"Meta"];
@@ -180,7 +180,7 @@
     
     CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
     NSAssert(objects != nil, @"'Objects' object group not found");
-    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPointJob"];        
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
     NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
     int x = [[spawnPoint valueForKey:@"x"] intValue];
     int y = [[spawnPoint valueForKey:@"y"] intValue];
@@ -396,8 +396,17 @@
             NSString *work2 = [properties valueForKey:@"JobTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
                 [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"You better work!":@"Jobba hårt":@"Jobba inte så hårt"];
+                [prat stringChanged:@"What do you want?":@"":@"Nothing..."];
             }
+            
+        NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
+        if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
+            [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+            [prat stringChanged:@"Hi boy!":@"You´re pretty" :@"Wanna hang?"];
+        }
+            
+
+            
             NSString *study = [properties valueForKey:@"study"];
             if (study && [study compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
