@@ -49,6 +49,7 @@
     CCSprite * ruta;
     CCLabelTTF * statLabel;
     CCMenu * saveMenu;
+    int bicycle;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
