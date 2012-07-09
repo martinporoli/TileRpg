@@ -44,13 +44,10 @@
     int flower;
     int jewlery;
     CGPoint targetPoint;
-<<<<<<< HEAD
     CCLayer * layer;
     CCSprite * ruta;
     CCLabelTTF * statLabel;
     CCMenu * saveMenu;
-=======
->>>>>>> 43fda53ccd336a79b036a864b1df0a551d3dcd52
     int bicycle;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
