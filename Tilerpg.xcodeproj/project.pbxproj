@@ -1080,6 +1080,14 @@
 				9078D05215AB02780015F65A /* GirlsHome.tmx in Resources */,
 				9029B5F415AB13D8008A5A3D /* saveGame.png in Resources */,
 				9029B5F515AB13D8008A5A3D /* saveGamePress.png in Resources */,
+				9078D05B15AB140A0015F65A /* gubbeCyklarBak1.png in Resources */,
+				9078D05C15AB140A0015F65A /* gubbeCyklarBak2.png in Resources */,
+				9078D05D15AB140A0015F65A /* gubbeCyklarFram1.png in Resources */,
+				9078D05E15AB140A0015F65A /* gubbeCyklarFram2.png in Resources */,
+				9078D05F15AB140A0015F65A /* gubbeCyklarLeft.png in Resources */,
+				9078D06015AB140A0015F65A /* gubbeCyklarLeft2.png in Resources */,
+				9078D06115AB140A0015F65A /* gubbeCyklarRight.png in Resources */,
+				9078D06215AB140A0015F65A /* gubbeCyklarRight2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
