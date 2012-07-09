@@ -125,8 +125,6 @@
     
     stats = [StatLayer node];
     [self addChild:stats];
-    prat = [Prat node];
-    [self addChild:prat];
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
@@ -500,7 +498,7 @@
             NSString *work2 = [properties valueForKey:@"JobTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
                 [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"What do you want?":@"":@"Nothing..."];
+                [prat stringChanged:@"What do you want?":@"":@"Nothing"];
             }
             
         NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
