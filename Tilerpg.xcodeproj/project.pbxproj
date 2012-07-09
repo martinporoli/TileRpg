@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9029B5F415AB13D8008A5A3D /* saveGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 9029B5F215AB13D8008A5A3D /* saveGame.png */; };
+		9029B5F515AB13D8008A5A3D /* saveGamePress.png in Resources */ = {isa = PBXBuildFile; fileRef = 9029B5F315AB13D8008A5A3D /* saveGamePress.png */; };
 		90303D6415A70B51003D9885 /* GubbeTranar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6315A70B51003D9885 /* GubbeTranar.png */; };
 		90303D6715A70B72003D9885 /* GubbePluggar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6615A70B72003D9885 /* GubbePluggar.png */; };
 		90303D6915A70B7B003D9885 /* GubbeDricker.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6815A70B7B003D9885 /* GubbeDricker.png */; };
@@ -176,6 +178,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9029B5F215AB13D8008A5A3D /* saveGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGame.png; sourceTree = "<group>"; };
+		9029B5F315AB13D8008A5A3D /* saveGamePress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGamePress.png; sourceTree = "<group>"; };
 		90303D6315A70B51003D9885 /* GubbeTranar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeTranar.png; sourceTree = "<group>"; };
 		90303D6615A70B72003D9885 /* GubbePluggar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbePluggar.png; sourceTree = "<group>"; };
 		90303D6815A70B7B003D9885 /* GubbeDricker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeDricker.png; sourceTree = "<group>"; };
@@ -937,6 +941,8 @@
 				90B9496D15A7081A007F67C8 /* newGame2.png */,
 				9049AC7B15A71DD40082A167 /* statRuta.png */,
 				90B9496F15A7081A007F67C8 /* storBubbla.png */,
+				9029B5F215AB13D8008A5A3D /* saveGame.png */,
+				9029B5F315AB13D8008A5A3D /* saveGamePress.png */,
 			);
 			name = Pics;
 			sourceTree = "<group>";
@@ -1072,6 +1078,8 @@
 				9078D04C15AAD6DD0015F65A /* gubbeBartender.png in Resources */,
 				9078D05015AAD8640015F65A /* BarMap.tmx in Resources */,
 				9078D05215AB02780015F65A /* GirlsHome.tmx in Resources */,
+				9029B5F415AB13D8008A5A3D /* saveGame.png in Resources */,
+				9029B5F515AB13D8008A5A3D /* saveGamePress.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

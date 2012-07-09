@@ -7,36 +7,18 @@
 #pragma mark - HelloWorldLayer
 @implementation StatLayer
 {
-    CCLayer * layer;
-    CCSprite * ruta;
-    CCLabelTTF * statLabel;
+    
 }
 -(id) init
 {
     if (self = [super init])
     {
-        ruta=[CCSprite spriteWithFile:@"statRuta.png"];
-        statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25];
-        statLabel.color=ccc3(0,0,0);
-        [self addChild:ruta];
-        [self addChild:statLabel];
         
-        CGSize size = [[CCDirector sharedDirector] winSize];
-        [ruta setScaleX: size.width/1024];
-        [ruta setScaleY: size.height/768];
-        [statLabel setScaleX: size.width/1024];
-        [statLabel setScaleY: size.height/768];
         
     }
     return self;
 }
--(void)showRuta:(CGPoint)point:(int)newEnergy:(int)newMoney:(int)newInt:(int)newStr:(int)newCha:(int)newDay
-{
-    NSString * statString = [NSString stringWithFormat:@"Energy:\t%i\nMoney:\t%i\nIntelligence:\t%i\nStrength:\t%i\nCharm:\t%i\nDay:\t%i",newEnergy,newMoney,newInt,newStr,newCha,newDay];
-    [statLabel setString:statString];
-    ruta.position=point;
-    statLabel.position=point;
-}
+
 @end
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -48,7 +30,6 @@
     CCSprite *player;
     int playerWalk,jumpAble,chestMoney;
     int money,Int,Str,Cha,energy,days,raise;
-    StatLayer * stats;
     CGPoint viewPoint;
     CCMenu *menu;
     CGSize size;
@@ -64,6 +45,10 @@
     int jewlery;
     int walkTimer,startTimer;
     CGPoint targetPoint;
+    CCLayer * layer;
+    CCSprite * ruta;
+    CCLabelTTF * statLabel;
+    CCMenu * saveMenu;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -116,6 +101,7 @@
         [pratLabel setScaleY:size.height/768];
         [pratMenu setScaleX:size.width/1024];
         [pratMenu setScaleY:size.height/768];
+        
     }
 	return self;
 }
@@ -128,8 +114,6 @@
     energy=100;
     days=1;
     
-    stats = [StatLayer node];
-    [self addChild:stats];
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
@@ -151,9 +135,33 @@
     [self setViewpointCenter:player.position];
     self.isTouchEnabled = YES;
     [self removeChild:menu cleanup:YES];
+    ruta=[CCSprite spriteWithFile:@"statRuta.png"];
+    CCMenuItem *item = [CCMenuItemImage itemWithNormalImage:@"saveGame.png" selectedImage:@"saveGamePress.png" target:self selector:@selector(saveGame:)];
+    saveMenu = [CCMenu menuWithItems:item, nil];
+    statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25];
+    statLabel.color=ccc3(0,0,0);
+    [self addChild:ruta];
+    [self addChild:statLabel];
+    [self addChild:saveMenu];
+    
+    [ruta setScaleX: size.width/1024];
+    [ruta setScaleY: size.height/768];
+    [statLabel setScaleX: size.width/1024];
+    [statLabel setScaleY: size.height/768];
+    [saveMenu setScaleX: size.width/1024];
+    [saveMenu setScaleY: size.height/768];
 }
 -(void)loadGame:(id)sender{
     NSLog(@"load the fuckin game");
+}
+
+-(void)showRuta:(CGPoint)point:(int)newEnergy:(int)newMoney:(int)newInt:(int)newStr:(int)newCha:(int)newDay
+{
+    NSString * statString = [NSString stringWithFormat:@"Energy:\t%i\nMoney:\t%i\nIntelligence:\t%i\nStrength:\t%i\nCharm:\t%i\nDay:\t%i",newEnergy,newMoney,newInt,newStr,newCha,newDay];
+    [statLabel setString:statString];
+    ruta.position=point;
+    statLabel.position=point;
+    saveMenu.position=point;
 }
 
 -(void)Option1:(id)sender{
@@ -290,7 +298,7 @@
         }
              }
     if (PratID==11){
-        if (money>199) {
+        if (money>=200) {
             money-=200;
             flower=1;
             [self stringChanged:@"Good choice!" :@"" :@"" :-1];
@@ -317,7 +325,7 @@
     
     }
     if (PratID==11) {
-        if (money>399) {
+        if (money>=400) {
             money-=400;
             jewlery=1;
             [self stringChanged:@"Good choice!" :@"" :@"" :-1];
@@ -409,15 +417,32 @@
     CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
     viewPoint = ccpSub(centerOfView, actualPosition);
     self.position = viewPoint;
-    [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3-(40*winSize.height/768)):energy:money:Int:Str:Cha:days];
+    [self showRuta:ccp(x+winSize.width/3,y+winSize.height/3-(40*winSize.height/768)):energy:money:Int:Str:Cha:days];
 }
 
 -(void) registerWithTouchDispatcher
 {
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self 
                                                      priority:0 swallowsTouches:YES];
-}//hejhej
+}
 
+-(void)saveGame
+{
+    NSUserDefaults *hej;
+    hej = [NSUserDefaults standardUserDefaults];
+    NSString *loadInt = [NSString stringWithFormat:@"%d",Int];
+    NSString *loadCha = [NSString stringWithFormat:@"%d",Cha];
+    NSString *loadStr = [NSString stringWithFormat:@"%d",Str];
+    NSString *loadDay = [NSString stringWithFormat:@"%d",days];
+    NSString *loadMoney = [NSString stringWithFormat:@"%d",money];
+    [hej setValue:loadInt forKey:@"SavedInt"];
+    [hej setValue:loadCha forKey:@"SavedCha"];
+    [hej setValue:loadStr forKey:@"SavedStr"];
+    [hej setValue:loadDay forKey:@"SavedDay"];
+    [hej setValue:loadMoney forKey:@"SavedMoney"];
+    
+    [hej synchronize];
+}
 
 
 -(void)setPlayerPosition:(CGPoint)position {
@@ -533,13 +558,15 @@
             }
             NSString *drink = [properties valueForKey:@"Drinking"];
             if (drink && [drink compare:@"True"] == NSOrderedSame) {
-                if(energy>19)
+                if(energy>19&&money>=10)
                 {
                     [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbeDricker.png"]];                    energy-=20;
                     Cha+=5;
                     money-=10;
                 }
             }
+            
+            
             NSString *work = [properties valueForKey:@"Work"];
             if (work && [work compare:@"True"] == NSOrderedSame) {
                 if(energy>=25)
