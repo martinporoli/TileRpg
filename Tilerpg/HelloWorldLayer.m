@@ -3,7 +3,7 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
-
+#import "ShortestPath.h"
 #pragma mark - HelloWorldLayer
 @implementation StatLayer
 {
@@ -58,6 +58,7 @@
     CCLabelTTF *Op1;
     CCLabelTTF *Op2;
     int PratID;
+    ShortestPath *_shortestPath;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
