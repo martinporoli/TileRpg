@@ -486,6 +486,7 @@
                 {
                     [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbeDricker.png"]];                    energy-=20;
                     Cha+=5;
+                    money-=10;
                 }
             }
             NSString *work = [properties valueForKey:@"Work"];
