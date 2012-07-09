@@ -244,9 +244,20 @@
     {
         [self stringChanged:@"You're already the president" :@"" :@"" :-1];
     }
+    if(PratID==9)
+    {
+        if(money+=50)
+        {
+            Int+=20;
+            money-=50;
+        }
+        else {
+            [self stringChanged:@"It costs 50 to be tutored" :@"" :@"" :-1];
+        }
+    }
 }
 -(void)Option2:(id)sender{
-    if(PratID<=8)
+    if(PratID<=9)
     {
         [self hideBubbla];
     }
@@ -493,6 +504,18 @@
                     {
                         money+=500;
                     }
+                    if(raise==6)
+                    {
+                        money+=1000;
+                    }
+                    if(raise==7)
+                    {
+                        money+=2000;
+                    }
+                    if(raise==8)
+                    {
+                        money+=5000;
+                    }
                 }
             }
             NSString *work2 = [properties valueForKey:@"JobTalk"];
@@ -520,18 +543,18 @@
             NSString *schoolTalk = [properties valueForKey:@"SchoolTalk"];
             if (schoolTalk && [schoolTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good":8];
+                [self stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good":9];
 
             }
             NSString *barTalk = [properties valueForKey:@"BarTalk"];
             if (barTalk && [barTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"You like beer?":@"Drink":@"Drink more":9];
+                [self stringChanged:@"You like beer?":@"Drink":@"Drink more":10];
             }
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun":10];
+                [self stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun":11];
             }
             NSString *workOut = [properties valueForKey:@"strength"];
             if (workOut && [workOut compare:@"True"] == NSOrderedSame) {
