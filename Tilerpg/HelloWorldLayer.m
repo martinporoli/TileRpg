@@ -43,12 +43,14 @@
     int present;
     int flower;
     int jewlery;
-    int walkTimer,startTimer;
     CGPoint targetPoint;
+<<<<<<< HEAD
     CCLayer * layer;
     CCSprite * ruta;
     CCLabelTTF * statLabel;
     CCMenu * saveMenu;
+=======
+>>>>>>> 43fda53ccd336a79b036a864b1df0a551d3dcd52
     int bicycle;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -108,7 +110,7 @@
 }
 
 -(void)newGame:(id)sender{
-    money=0;
+    money=500;
     Int=0;
     Str=0;
     Cha=0;
@@ -308,6 +310,16 @@
         }
         else {
             [self stringChanged:@"Sorry, you don´t have enough money. Flowers cost 200." :@"" :@"" :-1];
+        }
+    }
+    if (PratID==17) {
+        if (money>=300) {
+            money-=300;
+            bicycle=1;
+            [self stringChanged:@"Good choice!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"Sorry, you don´t have enough money. A bicycle costs 300." :@"" :@"" :-1];
         }
     }
              
@@ -677,9 +689,10 @@
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"What would you like?" :@"A bicycle!(300)" :@"I don´t know..." :17];
                 
                 if (present==1) {
-                [self stringChanged:@"What would you like?":@"Flowers!":@"Jewlery!":11];
+                [self stringChanged:@"What would you like?":@"Flowers!(200)":@"Jewlery!(400)":11];
             }
             }    
             NSString *workOut = [properties valueForKey:@"strength"];
@@ -759,11 +772,17 @@
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan.png"]];
                 playerWalk++;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarRight.png"]];
+                }
             }
             else if(playerWalk==1)
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan2.png"]];
                 playerWalk=0;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarRight2.png"]];
+                }
             }
         } else {
             jumpAble=0;
@@ -772,11 +791,17 @@
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft.png"]];
                 playerWalk++;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarLeft.png"]];
+                }
             }
             else if(playerWalk==1)
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
                 playerWalk=0;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarLeft2.png"]];
+                }
             }
         }    
     } else {
@@ -787,11 +812,17 @@
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak1.png"]];
                 playerWalk++;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarBak1.png"]];
+                }
             }
             else if(playerWalk==1)
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak2.png"]];
                 playerWalk=0;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarBak2.png"]];
+                }
             }
         } else {
             jumpAble=1;
@@ -800,11 +831,17 @@
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe1.png"]];
                 playerWalk++;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarFram1.png"]];
+                }
             }
             else if(playerWalk==1)
             {
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe2.png"]];
                 playerWalk=0;
+                if (bicycle==1) {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarFram2.png"]];
+                }
             }
         }
     }
