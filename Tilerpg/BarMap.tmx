@@ -32,6 +32,12 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="20">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="WorkBar" value="True"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="117" name="character-tiles" tilewidth="32" tileheight="32">
   <image source="character-tiles.png" width="96" height="96"/>
@@ -43,7 +49,7 @@
  </layer>
  <layer name="Meta" width="20" height="20" opacity="0.34">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUkALkiMSkmgcDIlBaFo8aQuZhMx9kniCSPLnmIbtRhIA6Ys1DN4tc83CxSTUPWzxSEsfEuI8cADJDBoqpZR42Ni4AAKI+BcA=
+   eJxjYBgFo2AUkALkiMSkmgcDIlBaFo8aQuYhA1WoGMg8QSR5cs1DdqMIAXXEmoduFrnm4WKTah62eKQkjolxHzkAZIYMFFPLPGxsXAAAssIFxw==
   </data>
  </layer>
  <objectgroup name="Objects" width="20" height="20">

@@ -258,6 +258,16 @@
             [self stringChanged:@"It costs 50 to be tutored" :@"" :@"" :-1];
         }
     }
+    if (PratID==10) {
+        if (Cha>24) {
+            raise+=1;
+            [self stringChanged:@"Now you're a bartender!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"Sorry, you need 25 Charm to be a bartender" :@"" :@"" :-1];
+        }
+
+    }
 }
 -(void)Option2:(id)sender{
     if(PratID<=9)
@@ -546,8 +556,18 @@
             NSString *barTalk = [properties valueForKey:@"BarTalk"];
             if (barTalk && [barTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"You like beer?":@"Drink":@"Drink more":10];
+                [self stringChanged:@"You need a job?":@"Yeah!":@"No thanks":10];
             }
+            NSString *workBar = [properties valueForKey:@"WorkBar"];
+            if (workBar && [workBar compare:@"True"] == NSOrderedSame) {
+                energy-=25;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
+                if(raise==1)
+                {
+                    money+=20;
+                }
+            }
+            
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
