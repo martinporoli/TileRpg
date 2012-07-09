@@ -59,8 +59,10 @@
     CCLabelTTF *Op2;
     int PratID;
     ShortestPath *_shortestPath;
+    int present;
+    int flower;
+    int jewlery;
 }
-
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
@@ -276,11 +278,53 @@
             [self stringChanged:@"NO! You´re soo not my type! Beat it! Come back when you´ve increased your charm."  :@"" :@"" :-1];
         }
     }
+    if (PratID==14) {
+        if (Cha>99) {
+            [self stringChanged:@"Oh! I can´t wait to see what it is!" :@"" :@"" :-1];
+        
+    }
+        else {
+            [self stringChanged:@"If you want to get to know me better you should increase your charm (100)" :@"" :@"" :-1];
+        }
+             }
+    if (PratID==11){
+        if (money>199) {
+            money-=200;
+            flower=1;
+            [self stringChanged:@"Good choice!" :@"" :@"" :-1];
+            
+        }
+        else {
+            [self stringChanged:@"Sorry, you don´t have enough money. Flowers cost 200." :@"" :@"" :-1];
+        }
+    }
+             
 }
 -(void)Option2:(id)sender{
     if(PratID<=9)
     {
         [self hideBubbla];
+    }
+    if (PratID==14) {
+        if (Cha>99) {
+            [self stringChanged:@"Well that´s rude. I think you should go and come back when you´re in a better mood" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"If you want to get to know me better you should increase your charm (100)" :@"" :@"" :-1];       
+        }
+    
+    }
+    if (PratID==11) {
+        if (money>399) {
+            money-=400;
+            jewlery=1;
+            [self stringChanged:@"Good choice!" :@"" :@"" :-1];
+            
+        }
+        else {
+            [self stringChanged:@"Sorry, you don´t have enough money. Jewlery costs 400." :@"" :@"" :-1];
+        }
+
     }
 }
 
@@ -582,13 +626,34 @@
             if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
                 [self stringChanged:@"Hi Boy!" :@"You wanna hang?" :@"" :12];
-            }
-            
+                if (Cha>74) {
+                    present=0;
+                    [self stringChanged:@"Hi again. If you want to get to know me better you should increase your charm (100), come back later!" :@"" :@"" :13];
+                }
+                if (Cha>99) {
+                    present=1;
+                    [self stringChanged:@"Hi! You know it´s my birthday soon. You gonna get me something?" :@"Ofcourse!" :@"I don´t know..." :14];
+                     }
+                if (flower==1) {
+                    [self stringChanged:@"Flowers? I guess that´s kinda sweet of you. Thanks! (+20 Charm)" :@"" :@"" :15];
+                    Cha+=20;
+                    present=0;
+                }
+                if (jewlery==1) {
+                    [self stringChanged:@"OMG! I love this jewlery! It´s the best present ever! (+40 Charm)" :@"" :@"" :16];
+                    Cha+=40;
+                    present=0;
+                }
+                }
+                     
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"What would you like?":@"You baby grr":@"A handmade superblastergun":11];
+                
+                if (present==1) {
+                [self stringChanged:@"What would you like?":@"Flowers!":@"Jewlery!":11];
             }
+            }    
             NSString *workOut = [properties valueForKey:@"strength"];
             if (workOut && [workOut compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
@@ -639,9 +704,11 @@
             if (collision && [collision compare:@"True"] == NSOrderedSame) {
                 return;
             }
-        }
+            }
     }
+    
     player.position = position;
+    
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
