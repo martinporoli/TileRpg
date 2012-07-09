@@ -176,68 +176,68 @@
     }
     if(PratID==2)
     {
-        if(Int>=90)
+        if(Int>=100)
         {
             raise+=1;
             [self stringChanged:@"Now you're an assistant!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 90 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 100 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==3)
     {
-        if(Int>=135)
+        if(Int>=175)
         {
             raise+=1;
             [self stringChanged:@"Now you're a junior copywriter!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 135 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 175 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==4)
     {
-        if(Int>=180)
+        if(Int>=250)
         {
             raise+=1;
             [self stringChanged:@"Now you're a software engineer!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 180 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 250 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==5)
     {
-        if(Int>=230)
+        if(Int>=400)
         {
             raise+=1;
             [self stringChanged:@"Now you're the product manager!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 230 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 400 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==6)
     {
-        if(Int>=300)
+        if(Int>=700)
         {
             raise+=1;
             [self stringChanged:@"Now you're the vice president of the company!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 300 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 700 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==7)
     {
-        if(Int>=360)
+        if(Int>=1000)
         {
             raise+=1;
             [self stringChanged:@"Now you're the president of the company!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 360 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 1000 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==8)
@@ -246,8 +246,9 @@
     }
     if(PratID==9)
     {
-        if(money+=50)
+        if(money>=50&&energy>=25)
         {
+            energy-=25;
             Int+=20;
             money-=50;
         }
