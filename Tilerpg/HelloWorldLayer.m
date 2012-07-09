@@ -520,15 +520,9 @@
             }
             NSString *work2 = [properties valueForKey:@"JobTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
-                [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [prat stringChanged:@"What do you want?":@"":@"Nothing"];
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"What do you want?":@"Ask for a raise":@"Nothing":raise];
             }
-            
-        NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
-        if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
-            [prat showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-            [prat stringChanged:@"Hi boy!":@"You´re pretty" :@"Wanna hang?"];
-        }
             
 
             
