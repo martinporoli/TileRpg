@@ -16,7 +16,7 @@
 	int hScore;
 	ShortestPathStep *parent;
 }
-
+//ag
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, assign) int gScore;
 @property (nonatomic, assign) int hScore;
