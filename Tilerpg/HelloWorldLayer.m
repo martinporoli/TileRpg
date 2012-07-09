@@ -561,11 +561,13 @@
             }
             NSString *workBar = [properties valueForKey:@"WorkBar"];
             if (workBar && [workBar compare:@"True"] == NSOrderedSame) {
+                if (Cha>24) {
                 energy-=25;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
                 if(raise==1)
                 {
                     money+=20;
+                }
                 }
             }
             
