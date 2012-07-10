@@ -631,6 +631,14 @@
                 }
                 }
             }
+            NSString *LumberWork = [properties valueForKey:@"Chop"];
+            if (LumberWork && [LumberWork compare:@"True"] == NSOrderedSame) {
+                if (energy>=25) {
+                energy-=25;
+                money+= Str * 3;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeJobbar.png"]]; 
+            }
+            }                       
             NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
             if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
@@ -769,10 +777,11 @@
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
                 playerWalk=0;
                 if (bicycle==1) {
-                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarLeft2.png"]];
+              
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarLeft2.png"]];
                 }
             }
-        }    
+        }
     } else {
         if (diff.y > 0) {
             jumpAble=0;
