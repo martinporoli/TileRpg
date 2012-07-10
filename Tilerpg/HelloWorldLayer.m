@@ -206,6 +206,7 @@
     [self removeChild:menu cleanup:YES];
     ruta=[CCSprite spriteWithFile:@"statRuta.png"];
     CCMenuItem *item = [CCMenuItemImage itemWithNormalImage:@"saveGame.png" selectedImage:@"saveGamePress.png" target:self selector:@selector(saveGame)];
+    NSLog(@"hej%@", item);
     saveMenu = [CCMenu menuWithItems:item, nil];
     statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25];
     statLabel.color=ccc3(0,0,0);
