@@ -51,6 +51,7 @@
     int bicycle;
     int BiBought;
     int AxeBought;
+    int startLumber;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -109,11 +110,11 @@
 }
 
 -(void)newGame:(id)sender{
-    money=500;
+    money=5000;
     Int=0;
-    Str=0;
+    Str=50;
     Cha=0;
-    energy=100;
+    energy=1000;
     days=1;
     
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
@@ -396,8 +397,9 @@
             [self stringChanged:@"Sorry, you don´t have enough money. An Axe costs 1000." :@"" :@"" :-1];
         }
     }
-    if(PratID==19)
-    {
+    if (PratID==19){
+        startLumber=1;
+        [self stringChanged:@"Well then, get to work! Don´t forget you need an axe before you can start." :@"" :@"" :-1];
     }
              
 }
@@ -436,6 +438,9 @@
         else {
             [self stringChanged:@"Sorry, you don´t have enough money. An Axe costs 1000." :@"" :@"" :-1];
         }
+    }
+    if (PratID==19) {
+        [self stringChanged:@"Well then, go do something else." :@"" :@"" :-1]; 
     }
 
     }
@@ -740,11 +745,13 @@
             if (LumberWork && [LumberWork compare:@"True"] == NSOrderedSame) {
                 if (energy>=25) {
                     if (AxeBought==1) {
+                        if (startLumber==1) {
                 energy-=25;
                 money+= Str * 3;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeJobbar.png"]]; 
             }
             } 
+            }
             }
             NSString *lumber = [properties valueForKey:@"lumberjack"];
             if (lumber && [lumber compare:@"True"] == NSOrderedSame) {
