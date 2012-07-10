@@ -49,6 +49,8 @@
     CCLabelTTF * statLabel;
     CCMenu * saveMenu;
     int bicycle;
+    int BiBought;
+    int AxeBought;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -373,13 +375,25 @@
         }
     }
     if (PratID==17) {
-        if (money>=300) {
-            money-=300;
+        if (money>=1000) {
+            money-=1000;
             bicycle=1;
+            BiBought=1;
             [self stringChanged:@"Good choice!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"Sorry, you don´t have enough money. A bicycle costs 300." :@"" :@"" :-1];
+            [self stringChanged:@"Sorry, you don´t have enough money. A bicycle costs 1000." :@"" :@"" :-1];
+        }
+    }
+    if (PratID==18) {
+        if (money>=1000) {
+            money-=1000;
+            AxeBought=1;
+            [self stringChanged:@"Good choice!" :@"" :@"" :-1];
+            
+        }
+        else {
+            [self stringChanged:@"Sorry, you don´t have enough money. An Axe costs 1000." :@"" :@"" :-1];
         }
     }
     if(PratID==19)
@@ -413,7 +427,18 @@
         }
 
     }
-}
+    if (PratID==17) {
+        if (money>=1000) {
+            money-=1000;
+            AxeBought=1;
+            [self stringChanged:@"Good choice!" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"Sorry, you don´t have enough money. An Axe costs 1000." :@"" :@"" :-1];
+        }
+    }
+
+    }
 
 
 -(void)stringChanged:(NSString*)prat:(NSString*)alt1:(NSString*)alt2:(int)pratID
@@ -701,7 +726,15 @@
             }
             NSString *workBar = [properties valueForKey:@"WorkBar"];
             if (workBar && [workBar compare:@"True"] == NSOrderedSame) {
+<<<<<<< HEAD
                 if(jumpAble!=0)
+=======
+                if (Cha>24) {
+                    if (energy>=25) {
+                energy-=25;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
+                if(raise==1)
+>>>>>>> 04bdb6a8062d8507282dc9038bce61f1dd2aeb21
                 {
                     if (Cha>24) {
                         energy-=25;
@@ -712,6 +745,17 @@
                         }
                     }
                 }
+                }
+            }
+            NSString *LumberWork = [properties valueForKey:@"Chop"];
+            if (LumberWork && [LumberWork compare:@"True"] == NSOrderedSame) {
+                if (energy>=25) {
+                    if (AxeBought==1) {
+                energy-=25;
+                money+= Str * 3;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeJobbar.png"]]; 
+            }
+            } 
             }
             NSString *lumber = [properties valueForKey:@"lumberjack"];
             if (lumber && [lumber compare:@"True"] == NSOrderedSame) {
@@ -745,8 +789,12 @@
             NSString *shopTalk = [properties valueForKey:@"ShopTalk"];
             if (shopTalk && [shopTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"What would you like?" :@"A bicycle!(300)" :@"I don´t know..." :17];
-                
+                [self stringChanged:@"What would you like?" :@"A bicycle!(1000)" :@"An Axe!(1000)" :17];
+                if (BiBought==1) {
+                    [self stringChanged:@"What would you like?" :@"An Axe!(1000)" :@"I don´t know..." :18];                }
+                if (AxeBought==1) {
+                    [self stringChanged:@"What would you like?" :@"" :@"I don´t know..." :18];             
+                }
                 if (present==1) {
                 [self stringChanged:@"What would you like?":@"Flowers!(200)":@"Jewlery!(400)":11];
             }
@@ -852,10 +900,11 @@
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
                 playerWalk=0;
                 if (bicycle==1) {
-                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarLeft2.png"]];
+              
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeCyklarLeft2.png"]];
                 }
             }
-        }    
+        }
     } else {
         if (diff.y > 0) {
             jumpAble=0;
