@@ -5,21 +5,6 @@
 #import "AppDelegate.h"
 #import "ShortestPath.h"
 #pragma mark - HelloWorldLayer
-@implementation StatLayer
-{
-    
-}
--(id) init
-{
-    if (self = [super init])
-    {
-        
-        
-    }
-    return self;
-}
-
-@end
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 {
@@ -579,7 +564,7 @@
             if (coin && [coin compare:@"True"] == NSOrderedSame) {
                 if(chestMoney<5)
                 {
-                    money+=100;
+                    money+=20;
                     chestMoney++;
                 }
                 else {
@@ -754,12 +739,13 @@
                 if (energy>=25) {
                     if (AxeBought==1) {
                         if (startLumber==1) {
-                energy-=25;
-                money+= Str * 3;
-                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeJobbar.png"]]; 
-            }
-            } 
-            }
+                            energy-=25;
+                            money+= Str * 3;
+                            Str+=5;
+                            [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeJobbar.png"]]; 
+                        }
+                    } 
+                }
             }
             NSString *lumber = [properties valueForKey:@"lumberjack"];
             if (lumber && [lumber compare:@"True"] == NSOrderedSame) {
@@ -865,7 +851,7 @@
         [self unschedule:@selector(walking)];
         return;
     }
-    NSLog(@"%f%f%f%f",player.position.x,player.position.y,targetPoint.x,targetPoint.y);
+    //NSLog(@"%f%f%f%f",player.position.x,player.position.y,targetPoint.x,targetPoint.y);
     CGPoint playerPos = player.position;
     CGPoint diff = ccpSub(targetPoint, playerPos);
     if (abs(diff.x) > abs(diff.y)) {
@@ -1044,7 +1030,7 @@
     }
     if(bicycle==1)
     {
-        [self schedule:@selector(walking) interval:0.1];
+        [self schedule:@selector(walking) interval:0.08];
     }
     return YES;
     
