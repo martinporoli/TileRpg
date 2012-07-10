@@ -382,6 +382,9 @@
             [self stringChanged:@"Sorry, you don´t have enough money. A bicycle costs 300." :@"" :@"" :-1];
         }
     }
+    if(PratID==19)
+    {
+    }
              
 }
 -(void)Option2:(id)sender{
@@ -698,6 +701,8 @@
             }
             NSString *workBar = [properties valueForKey:@"WorkBar"];
             if (workBar && [workBar compare:@"True"] == NSOrderedSame) {
+                if(jumpAble!=0)
+                {
                     if (Cha>24) {
                         energy-=25;
                         [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
@@ -707,6 +712,11 @@
                         }
                     }
                 }
+            }
+            NSString *lumber = [properties valueForKey:@"lumberjack"];
+            if (lumber && [lumber compare:@"True"] == NSOrderedSame) {
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"It's a tough job lumberjacking, but it can be rewarding":@"Work as lumberjack":@"Don't work as lumberjack":19];
             }
             NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
             if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
