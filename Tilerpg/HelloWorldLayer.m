@@ -88,8 +88,8 @@
         pratLabel = [CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(500, 175) hAlignment:CCTextAlignmentCenter lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25.0];
         pratLabel.color = ccc3(0, 0, 0);
         [self addChild:pratLabel];
-        Op1 = [CCLabelTTF labelWithString:@"Cool Story Bro" fontName:@"Helvetica-Bold" fontSize:25];
-        Op2 = [CCLabelTTF labelWithString:@"Cool Story Bro" fontName:@"Helvetica-Bold" fontSize:25];
+        Op1 = [CCLabelTTF labelWithString:@"Cool Story Bro yeahyeah" fontName:@"Helvetica-Bold" fontSize:25];
+        Op2 = [CCLabelTTF labelWithString:@"Cool Story Bro yeahyeah" fontName:@"Helvetica-Bold" fontSize:25];
         Op1.color=ccc3(255,0,0);
         Op2.color=ccc3(255,0,0);
         CCMenuItem *item3 = [CCMenuItemLabel itemWithLabel:Op1 target:self selector:@selector(Option1:)];
