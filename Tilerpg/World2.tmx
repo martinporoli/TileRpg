@@ -25,6 +25,12 @@
     <property name="GirlsHome" value="True"/>
    </properties>
   </tile>
+  <tile id="10">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="lumberjack" value="True"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="Collidable" value="True"/>
@@ -65,6 +71,9 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+ </tileset>
+ <tileset firstgid="210" name="lumberjack" tilewidth="32" tileheight="32">
+  <image source="lumberjack.png" width="32" height="32"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -118,4 +127,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="character" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzgENAAAIA6D3j2ciY1w3SEACN007AAAAAAAAAAAAvLIP+gDT
+  </data>
+ </layer>
 </map>
