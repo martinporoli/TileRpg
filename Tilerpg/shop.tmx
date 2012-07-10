@@ -37,7 +37,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.53">
   <data encoding="base64" compression="zlib">
-   eJzt1EEKwCAMBEBfa6+9+vsipFBEW+gpwgwEFRSyBCwFAAAAAAAAAGB/NSqj+rOyefZ1xNqG8+p+JmNPvfcW66rn7Dn6/p7BbBazN1mMObqvDLvkeLubOceszqjs/9UFnZkXxA==
+   eJzt1EEKgCAQBVBPa9u23j6ECULMoNUI78GggsJ8BUsBAAAAAAAAANhfjcqo/qxsnn0dMbZh/bY/k7Gn3nsr67vPnqPP7zeYvcXsTBZjju4rwy45Vnsz55jVGZX9v7oAmdEXww==
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
