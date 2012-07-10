@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9029B5F415AB13D8008A5A3D /* saveGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 9029B5F215AB13D8008A5A3D /* saveGame.png */; };
-		9029B5F515AB13D8008A5A3D /* saveGamePress.png in Resources */ = {isa = PBXBuildFile; fileRef = 9029B5F315AB13D8008A5A3D /* saveGamePress.png */; };
+		90142E2715AC232C008DB4A5 /* saveGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 90142E2515AC232C008DB4A5 /* saveGame.png */; };
+		90142E2815AC232C008DB4A5 /* saveGamePress.png in Resources */ = {isa = PBXBuildFile; fileRef = 90142E2615AC232C008DB4A5 /* saveGamePress.png */; };
+		90142E2A15AC2459008DB4A5 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90142E2915AC2459008DB4A5 /* HelloWorldLayer.m */; };
 		90303D6415A70B51003D9885 /* GubbeTranar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6315A70B51003D9885 /* GubbeTranar.png */; };
 		90303D6715A70B72003D9885 /* GubbePluggar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6615A70B72003D9885 /* GubbePluggar.png */; };
 		90303D6915A70B7B003D9885 /* GubbeDricker.png in Resources */ = {isa = PBXBuildFile; fileRef = 90303D6815A70B7B003D9885 /* GubbeDricker.png */; };
@@ -140,7 +141,6 @@
 		9050383715A7054D00F09749 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 9050383615A7054D00F09749 /* vec4.c */; };
 		9050383C15A7054D00F09749 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9050383B15A7054D00F09749 /* main.m */; };
 		9050383F15A7054D00F09749 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9050383E15A7054D00F09749 /* AppDelegate.m */; };
-		9050384215A7054D00F09749 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9050384115A7054D00F09749 /* HelloWorldLayer.m */; };
 		9078D04A15AAD6D40015F65A /* bar-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 9078D04915AAD6D40015F65A /* bar-tiles.png */; };
 		9078D04C15AAD6DD0015F65A /* gubbeBartender.png in Resources */ = {isa = PBXBuildFile; fileRef = 9078D04B15AAD6DD0015F65A /* gubbeBartender.png */; };
 		9078D05015AAD8640015F65A /* BarMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9078D04F15AAD8640015F65A /* BarMap.tmx */; };
@@ -184,21 +184,12 @@
 		90B949AA15A70AB0007F67C8 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499415A70AB0007F67C8 /* shop.png */; };
 		90B949AD15A70AB0007F67C8 /* World1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B9499715A70AB0007F67C8 /* World1.tmx */; };
 		90B949BB15A70FCE007F67C8 /* Job.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B949BA15A70FCE007F67C8 /* Job.tmx */; };
-		90D9055E15AC086A001945FE /* gubbeCyklarBak1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055615AC086A001945FE /* gubbeCyklarBak1.png */; };
-		90D9055F15AC086A001945FE /* gubbeCyklarBak2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055715AC086A001945FE /* gubbeCyklarBak2.png */; };
-		90D9056015AC086A001945FE /* gubbeCyklarFram1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055815AC086A001945FE /* gubbeCyklarFram1.png */; };
-		90D9056115AC086A001945FE /* gubbeCyklarFram2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055915AC086A001945FE /* gubbeCyklarFram2.png */; };
-		90D9056215AC086A001945FE /* gubbeCyklarLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055A15AC086A001945FE /* gubbeCyklarLeft.png */; };
-		90D9056315AC086A001945FE /* gubbeCyklarLeft2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055B15AC086A001945FE /* gubbeCyklarLeft2.png */; };
-		90D9056415AC086A001945FE /* gubbeCyklarRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055C15AC086A001945FE /* gubbeCyklarRight.png */; };
-		90D9056515AC086A001945FE /* gubbeCyklarRight2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9055D15AC086A001945FE /* gubbeCyklarRight2.png */; };
-		90D9056C15AC16D7001945FE /* lumberjack.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D9056B15AC16D7001945FE /* lumberjack.png */; };
-		90D9056E15AC1711001945FE /* World2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D9056D15AC1711001945FE /* World2.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9029B5F215AB13D8008A5A3D /* saveGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGame.png; sourceTree = "<group>"; };
-		9029B5F315AB13D8008A5A3D /* saveGamePress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGamePress.png; sourceTree = "<group>"; };
+		90142E2515AC232C008DB4A5 /* saveGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGame.png; sourceTree = "<group>"; };
+		90142E2615AC232C008DB4A5 /* saveGamePress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGamePress.png; sourceTree = "<group>"; };
+		90142E2915AC2459008DB4A5 /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		90303D6315A70B51003D9885 /* GubbeTranar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeTranar.png; sourceTree = "<group>"; };
 		90303D6615A70B72003D9885 /* GubbePluggar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbePluggar.png; sourceTree = "<group>"; };
 		90303D6815A70B7B003D9885 /* GubbeDricker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeDricker.png; sourceTree = "<group>"; };
@@ -466,7 +457,6 @@
 		9050383D15A7054D00F09749 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9050383E15A7054D00F09749 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9050384015A7054D00F09749 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		9050384115A7054D00F09749 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		9078D04915AAD6D40015F65A /* bar-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-tiles.png"; sourceTree = "<group>"; };
 		9078D04B15AAD6DD0015F65A /* gubbeBartender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeBartender.png; sourceTree = "<group>"; };
 		9078D04F15AAD8640015F65A /* BarMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BarMap.tmx; sourceTree = "<group>"; };
@@ -519,7 +509,6 @@
 		90D9055C15AC086A001945FE /* gubbeCyklarRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeCyklarRight.png; sourceTree = "<group>"; };
 		90D9055D15AC086A001945FE /* gubbeCyklarRight2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeCyklarRight2.png; sourceTree = "<group>"; };
 		90D9056B15AC16D7001945FE /* lumberjack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumberjack.png; sourceTree = "<group>"; };
-		90D9056D15AC1711001945FE /* World2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World2.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,7 +570,7 @@
 				9050383D15A7054D00F09749 /* AppDelegate.h */,
 				9050383E15A7054D00F09749 /* AppDelegate.m */,
 				9050384015A7054D00F09749 /* HelloWorldLayer.h */,
-				9050384115A7054D00F09749 /* HelloWorldLayer.m */,
+				90142E2915AC2459008DB4A5 /* HelloWorldLayer.m */,
 				9049AC8315AACC010082A167 /* ShortestPath.h */,
 				9049AC8415AACC010082A167 /* ShortestPath.m */,
 				905036C815A7054A00F09749 /* Resources */,
@@ -996,8 +985,8 @@
 				90B9496D15A7081A007F67C8 /* newGame2.png */,
 				9049AC7B15A71DD40082A167 /* statRuta.png */,
 				90B9496F15A7081A007F67C8 /* storBubbla.png */,
-				9029B5F215AB13D8008A5A3D /* saveGame.png */,
-				9029B5F315AB13D8008A5A3D /* saveGamePress.png */,
+				90142E2515AC232C008DB4A5 /* saveGame.png */,
+				90142E2615AC232C008DB4A5 /* saveGamePress.png */,
 			);
 			name = Pics;
 			sourceTree = "<group>";
@@ -1143,6 +1132,8 @@
 				9078D06415AC12C10015F65A /* landskap2.png in Resources */,
 				9078D06815AC12D20015F65A /* gubbeJobbar.png in Resources */,
 				9078D06A15AC132E0015F65A /* World2.tmx in Resources */,
+				90142E2715AC232C008DB4A5 /* saveGame.png in Resources */,
+				90142E2815AC232C008DB4A5 /* saveGamePress.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1271,8 +1262,8 @@
 				9050383715A7054D00F09749 /* vec4.c in Sources */,
 				9050383C15A7054D00F09749 /* main.m in Sources */,
 				9050383F15A7054D00F09749 /* AppDelegate.m in Sources */,
-				9050384215A7054D00F09749 /* HelloWorldLayer.m in Sources */,
 				9049AC8515AACC010082A167 /* ShortestPath.m in Sources */,
+				90142E2A15AC2459008DB4A5 /* HelloWorldLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

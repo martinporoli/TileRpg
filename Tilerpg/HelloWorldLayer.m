@@ -337,12 +337,12 @@
         }
     }
     if (PratID==10) {
-        if (Cha>24) {
+        if (Cha>74) {
             raise+=1;
             [self stringChanged:@"Now you're a bartender!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"Sorry, you need 25 Charm to be a bartender" :@"" :@"" :-1];
+            [self stringChanged:@"Sorry, you need 75 Charm to be a bartender" :@"" :@"" :-1];
         }
 
     }
@@ -726,25 +726,15 @@
             }
             NSString *workBar = [properties valueForKey:@"WorkBar"];
             if (workBar && [workBar compare:@"True"] == NSOrderedSame) {
-<<<<<<< HEAD
                 if(jumpAble!=0)
-=======
-                if (Cha>24) {
-                    if (energy>=25) {
-                energy-=25;
-                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
-                if(raise==1)
->>>>>>> 04bdb6a8062d8507282dc9038bce61f1dd2aeb21
                 {
                     if (Cha>24) {
-                        energy-=25;
-                        [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
-                        if(raise==1)
-                        {
-                            money+=20;
+                        if (energy>=25) {
+                            energy-=25;
+                            money+=Cha*2;
+                            [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
                         }
                     }
-                }
                 }
             }
             NSString *LumberWork = [properties valueForKey:@"Chop"];
