@@ -398,8 +398,15 @@
         }
     }
     if (PratID==19){
-        startLumber=1;
-        [self stringChanged:@"Well then, get to work! Don´t forget you need an axe before you can start." :@"" :@"" :-1];
+        if(AxeBought==0)
+        {
+            [self stringChanged:@"You need to have an axe first!" :@"" :@"" :-1];
+        }
+        if(AxeBought==1)
+        {
+            startLumber=1;
+            [self stringChanged:@"Well then, get to work!" :@"" :@"" :-1];
+        }
     }
              
 }
