@@ -138,7 +138,6 @@
 		9050383715A7054D00F09749 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 9050383615A7054D00F09749 /* vec4.c */; };
 		9050383C15A7054D00F09749 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9050383B15A7054D00F09749 /* main.m */; };
 		9050383F15A7054D00F09749 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9050383E15A7054D00F09749 /* AppDelegate.m */; };
-		9050384215A7054D00F09749 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9050384115A7054D00F09749 /* HelloWorldLayer.m */; };
 		9078D04A15AAD6D40015F65A /* bar-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 9078D04915AAD6D40015F65A /* bar-tiles.png */; };
 		9078D04C15AAD6DD0015F65A /* gubbeBartender.png in Resources */ = {isa = PBXBuildFile; fileRef = 9078D04B15AAD6DD0015F65A /* gubbeBartender.png */; };
 		9078D05015AAD8640015F65A /* BarMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9078D04F15AAD8640015F65A /* BarMap.tmx */; };
@@ -186,8 +185,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9029B5F215AB13D8008A5A3D /* saveGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGame.png; sourceTree = "<group>"; };
-		9029B5F315AB13D8008A5A3D /* saveGamePress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGamePress.png; sourceTree = "<group>"; };
+		90142E2515AC232C008DB4A5 /* saveGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGame.png; sourceTree = "<group>"; };
+		90142E2615AC232C008DB4A5 /* saveGamePress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveGamePress.png; sourceTree = "<group>"; };
+		90142E2915AC2459008DB4A5 /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		90303D6315A70B51003D9885 /* GubbeTranar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeTranar.png; sourceTree = "<group>"; };
 		90303D6615A70B72003D9885 /* GubbePluggar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbePluggar.png; sourceTree = "<group>"; };
 		90303D6815A70B7B003D9885 /* GubbeDricker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeDricker.png; sourceTree = "<group>"; };
@@ -455,7 +455,6 @@
 		9050383D15A7054D00F09749 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9050383E15A7054D00F09749 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9050384015A7054D00F09749 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		9050384115A7054D00F09749 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		9078D04915AAD6D40015F65A /* bar-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-tiles.png"; sourceTree = "<group>"; };
 		9078D04B15AAD6DD0015F65A /* gubbeBartender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeBartender.png; sourceTree = "<group>"; };
 		9078D04F15AAD8640015F65A /* BarMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BarMap.tmx; sourceTree = "<group>"; };
@@ -569,7 +568,7 @@
 				9050383D15A7054D00F09749 /* AppDelegate.h */,
 				9050383E15A7054D00F09749 /* AppDelegate.m */,
 				9050384015A7054D00F09749 /* HelloWorldLayer.h */,
-				9050384115A7054D00F09749 /* HelloWorldLayer.m */,
+				90142E2915AC2459008DB4A5 /* HelloWorldLayer.m */,
 				9049AC8315AACC010082A167 /* ShortestPath.h */,
 				9049AC8415AACC010082A167 /* ShortestPath.m */,
 				905036C815A7054A00F09749 /* Resources */,
@@ -984,8 +983,8 @@
 				90B9496D15A7081A007F67C8 /* newGame2.png */,
 				9049AC7B15A71DD40082A167 /* statRuta.png */,
 				90B9496F15A7081A007F67C8 /* storBubbla.png */,
-				9029B5F215AB13D8008A5A3D /* saveGame.png */,
-				9029B5F315AB13D8008A5A3D /* saveGamePress.png */,
+				90142E2515AC232C008DB4A5 /* saveGame.png */,
+				90142E2615AC232C008DB4A5 /* saveGamePress.png */,
 			);
 			name = Pics;
 			sourceTree = "<group>";
@@ -1260,8 +1259,8 @@
 				9050383715A7054D00F09749 /* vec4.c in Sources */,
 				9050383C15A7054D00F09749 /* main.m in Sources */,
 				9050383F15A7054D00F09749 /* AppDelegate.m in Sources */,
-				9050384215A7054D00F09749 /* HelloWorldLayer.m in Sources */,
 				9049AC8515AACC010082A167 /* ShortestPath.m in Sources */,
+				90142E2A15AC2459008DB4A5 /* HelloWorldLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

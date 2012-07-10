@@ -166,6 +166,7 @@
     [hej setInteger:money forKey:@"savedMoney"];
     [hej setInteger:days forKey:@"savedDays"];
     [hej setInteger:bicycle forKey:@"savedBicycle"];
+    [hej setInteger:raise forKey:@"savedRaise"];
     
     [hej synchronize];
 }
@@ -179,6 +180,7 @@
     money = [hej integerForKey:@"savedMoney"];
     days = [hej integerForKey:@"savedDays"];
     bicycle = [hej integerForKey:@"savedBicycle"];
+    raise = [hej integerForKey:@"savedRaise"];
     
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
     background = [tileMap layerNamed:@"background"];
@@ -335,12 +337,12 @@
         }
     }
     if (PratID==10) {
-        if (Cha>24) {
+        if (Cha>74) {
             raise+=1;
             [self stringChanged:@"Now you're a bartender!" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"Sorry, you need 25 Charm to be a bartender" :@"" :@"" :-1];
+            [self stringChanged:@"Sorry, you need 75 Charm to be a bartender" :@"" :@"" :-1];
         }
 
     }
@@ -394,10 +396,13 @@
             [self stringChanged:@"Sorry, you don´t have enough money. An Axe costs 1000." :@"" :@"" :-1];
         }
     }
+    if(PratID==19)
+    {
+    }
              
 }
 -(void)Option2:(id)sender{
-    if(PratID<=9)
+    if(PratID<=9||PratID==19)
     {
         [self hideBubbla];
     }
@@ -639,7 +644,8 @@
             if (drink && [drink compare:@"True"] == NSOrderedSame) {
                 if(energy>19&&money>=10)
                 {
-                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbeDricker.png"]];                    energy-=20;
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbeDricker.png"]];                    
+                    energy-=20;
                     Cha+=5;
                     money-=10;
                 }
@@ -650,7 +656,8 @@
             if (work && [work compare:@"True"] == NSOrderedSame) {
                 if(energy>=25)
                 {
-                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    energy-=25;
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    
+                    energy-=25;
                     if(raise==0)
                     {
                         money+=20;
@@ -701,7 +708,8 @@
             if (study && [study compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
                 {
-                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    energy-=20;
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    
+                    energy-=20;
                     Int+=5;
                 }
             }
@@ -718,15 +726,15 @@
             }
             NSString *workBar = [properties valueForKey:@"WorkBar"];
             if (workBar && [workBar compare:@"True"] == NSOrderedSame) {
-                if (Cha>24) {
-                    if (energy>=25) {
-                energy-=25;
-                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
-                if(raise==1)
+                if(jumpAble!=0)
                 {
-                    money+=20;
-                }
-                }
+                    if (Cha>24) {
+                        if (energy>=25) {
+                            energy-=25;
+                            money+=Cha*2;
+                            [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBartender.png"]];  
+                        }
+                    }
                 }
             }
             NSString *LumberWork = [properties valueForKey:@"Chop"];
@@ -738,6 +746,11 @@
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeJobbar.png"]]; 
             }
             } 
+            }
+            NSString *lumber = [properties valueForKey:@"lumberjack"];
+            if (lumber && [lumber compare:@"True"] == NSOrderedSame) {
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"It's a tough job lumberjacking, but it can be rewarding":@"Work as lumberjack":@"Don't work as lumberjack":19];
             }
             NSString *girlTalk = [properties valueForKey:@"GirlTalk"];
             if (girlTalk && [girlTalk compare:@"True"] == NSOrderedSame) {
