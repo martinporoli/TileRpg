@@ -136,7 +136,7 @@
     self.isTouchEnabled = YES;
     [self removeChild:menu cleanup:YES];
     ruta=[CCSprite spriteWithFile:@"statRuta.png"];
-    CCMenuItem *item = [CCMenuItemImage itemWithNormalImage:@"saveGame.png" selectedImage:@"saveGamePress.png" target:self selector:@selector(saveGame:)];
+    CCMenuItem *item = [CCMenuItemImage itemWithNormalImage:@"saveGame.png" selectedImage:@"saveGamePress.png" target:self selector:@selector(saveGame)];
     saveMenu = [CCMenu menuWithItems:item, nil];
     statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25];
     statLabel.color=ccc3(0,0,0);
@@ -152,8 +152,69 @@
     [saveMenu setScaleY: size.height/768];
     saveMenu.position=ccp(-500,-500);
 }
+
+-(void)saveGame
+{
+    NSUserDefaults *hej;
+    hej = [NSUserDefaults standardUserDefaults];
+    [hej setInteger:Int forKey:@"savedInt"];
+    [hej setInteger:Str forKey:@"savedStr"];
+    [hej setInteger:Cha forKey:@"savedCha"];
+    [hej setInteger:energy forKey:@"savedEnergy"];
+    [hej setInteger:money forKey:@"savedMoney"];
+    [hej setInteger:days forKey:@"savedDays"];
+    [hej setInteger:bicycle forKey:@"savedBicycle"];
+    
+    [hej synchronize];
+}
+
 -(void)loadGame:(id)sender{
-    NSLog(@"load the fuckin game");
+    NSUserDefaults *hej = [NSUserDefaults standardUserDefaults];
+    Int = [hej integerForKey:@"savedInt"];
+    Str = [hej integerForKey:@"savedStr"];
+    Cha = [hej integerForKey:@"savedCha"];
+    energy = [hej integerForKey:@"savedEnergy"];
+    money = [hej integerForKey:@"savedMoney"];
+    days = [hej integerForKey:@"savedDays"];
+    bicycle = [hej integerForKey:@"savedBicycle"];
+    
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
+    background = [tileMap layerNamed:@"background"];
+    foreground = [tileMap layerNamed:@"foreground"];
+    meta = [tileMap layerNamed:@"Meta"];
+    meta.visible=NO;
+    [self addChild:tileMap z:-1];
+    player = [CCSprite spriteWithFile:@"gubbe.png"];
+    
+    CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
+    NSAssert(objects != nil, @"'Objects' object group not found");
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPointHome"];        
+    NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
+    int x = [[spawnPoint valueForKey:@"x"] intValue];
+    int y = [[spawnPoint valueForKey:@"y"] intValue];
+    
+    player.position = ccp(x, y);
+    [self addChild:player]; 
+    
+    [self setViewpointCenter:player.position];
+    self.isTouchEnabled = YES;
+    [self removeChild:menu cleanup:YES];
+    ruta=[CCSprite spriteWithFile:@"statRuta.png"];
+    CCMenuItem *item = [CCMenuItemImage itemWithNormalImage:@"saveGame.png" selectedImage:@"saveGamePress.png" target:self selector:@selector(saveGame)];
+    saveMenu = [CCMenu menuWithItems:item, nil];
+    statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25];
+    statLabel.color=ccc3(0,0,0);
+    [self addChild:ruta];
+    [self addChild:statLabel];
+    [self addChild:saveMenu];
+    
+    [ruta setScaleX: size.width/1024];
+    [ruta setScaleY: size.height/768];
+    [statLabel setScaleX: size.width/1024];
+    [statLabel setScaleY: size.height/768];
+    [saveMenu setScaleX: size.width/1024];
+    [saveMenu setScaleY: size.height/768];
+    saveMenu.position=ccp(-500,-500);
 }
 
 -(void)showRuta:(CGPoint)point:(int)newEnergy:(int)newMoney:(int)newInt:(int)newStr:(int)newCha:(int)newDay
@@ -437,24 +498,6 @@
                                                      priority:0 swallowsTouches:YES];
 }
 
--(void)saveGame
-{
-    NSUserDefaults *hej;
-    hej = [NSUserDefaults standardUserDefaults];
-    NSString *loadInt = [NSString stringWithFormat:@"%d",Int];
-    NSString *loadCha = [NSString stringWithFormat:@"%d",Cha];
-    NSString *loadStr = [NSString stringWithFormat:@"%d",Str];
-    NSString *loadDay = [NSString stringWithFormat:@"%d",days];
-    NSString *loadMoney = [NSString stringWithFormat:@"%d",money];
-    [hej setValue:loadInt forKey:@"SavedInt"];
-    [hej setValue:loadCha forKey:@"SavedCha"];
-    [hej setValue:loadStr forKey:@"SavedStr"];
-    [hej setValue:loadDay forKey:@"SavedDay"];
-    [hej setValue:loadMoney forKey:@"SavedMoney"];
-    
-    [hej synchronize];
-}
-
 
 -(void)setPlayerPosition:(CGPoint)position {
     
@@ -707,10 +750,6 @@
             }
             NSString *sleep = [properties valueForKey:@"sleep"];
             if (sleep && [sleep compare:@"True"] == NSOrderedSame) {
-                if(energy>50)
-                {
-                    Int-=5;
-                }
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSleeping.png"]];
                 energy=100;
                 days++;
@@ -930,8 +969,14 @@
     }
     
     [self setViewpointCenter:player.position];
-   
-    [self schedule:@selector(walking) interval:0.2];
+    if(bicycle==0)
+    {
+        [self schedule:@selector(walking) interval:0.2];
+    }
+    if(bicycle==1)
+    {
+        [self schedule:@selector(walking) interval:0.1];
+    }
     return YES;
     
 }
