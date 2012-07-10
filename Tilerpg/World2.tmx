@@ -73,7 +73,7 @@
   </tile>
  </tileset>
  <tileset firstgid="210" name="lumberjack" tilewidth="32" tileheight="32">
-  <image source="../Pics/lumberjack.png" width="32" height="32"/>
+  <image source="lumberjack.png" width="32" height="32"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
