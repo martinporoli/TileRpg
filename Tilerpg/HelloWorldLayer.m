@@ -96,14 +96,14 @@
 }
 
 -(void)newGame:(id)sender{
-    money=200000;
+    money=0;
     Int=0;
-    Str=50;
+    Str=0;
     Cha=0;
-    energy=1000;
-    days=1;
+    energy=100;
+    days=0;
     
-    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
     meta = [tileMap layerNamed:@"Meta"];
@@ -113,7 +113,7 @@
     
     CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
     NSAssert(objects != nil, @"'Objects' object group not found");
-    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPointHome"];        
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
     NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
     int x = [[spawnPoint valueForKey:@"x"] intValue];
     int y = [[spawnPoint valueForKey:@"y"] intValue];
@@ -221,90 +221,90 @@
 -(void)Option1:(id)sender{
     if(PratID==0)
     {
-        if(Int>=25)
-        {
-            raise+=1;
-            [self stringChanged:@"Now you're a Regular Janitor!" :@"" :@"" :-1];
-        }
-        else {
-            [self stringChanged:@"You need 25 Intelligence for a raise" :@"" :@"" :-1];
-        }
-    }
-    if(PratID==1)
-    {
         if(Int>=50)
         {
             raise+=1;
-            [self stringChanged:@"Now you're the Cheif Janitor!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're a Regular Janitor! Salary 45" :@"" :@"" :-1];
         }
         else {
             [self stringChanged:@"You need 50 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
-    if(PratID==2)
+    if(PratID==1)
     {
         if(Int>=100)
         {
             raise+=1;
-            [self stringChanged:@"Now you're an assistant!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're the Cheif Janitor! Salary 90" :@"" :@"" :-1];
         }
         else {
             [self stringChanged:@"You need 100 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
-    if(PratID==3)
+    if(PratID==2)
     {
-        if(Int>=175)
+        if(Int>=200)
         {
             raise+=1;
-            [self stringChanged:@"Now you're a junior copywriter!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're an assistant! Salary 150" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 175 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 200 Intelligence for a raise" :@"" :@"" :-1];
+        }
+    }
+    if(PratID==3)
+    {
+        if(Int>=350)
+        {
+            raise+=1;
+            [self stringChanged:@"Now you're a junior copywriter! Salary 250" :@"" :@"" :-1];
+        }
+        else {
+            [self stringChanged:@"You need 350 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==4)
     {
-        if(Int>=250)
+        if(Int>=500)
         {
             raise+=1;
-            [self stringChanged:@"Now you're a software engineer!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're a software engineer! Salary 500" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 250 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 500 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==5)
     {
-        if(Int>=400)
+        if(Int>=800)
         {
             raise+=1;
-            [self stringChanged:@"Now you're the product manager!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're the product manager! Salary 1000" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 400 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 800 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==6)
     {
-        if(Int>=700)
+        if(Int>=1400)
         {
             raise+=1;
-            [self stringChanged:@"Now you're the vice president of the company!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're the vice president of the company! Salary 2500" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 700 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 1400 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==7)
     {
-        if(Int>=1000)
+        if(Int>=2000)
         {
             raise+=1;
-            [self stringChanged:@"Now you're the president of the company!" :@"" :@"" :-1];
+            [self stringChanged:@"Now you're the president of the company! Salary 5000" :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"You need 1000 Intelligence for a raise" :@"" :@"" :-1];
+            [self stringChanged:@"You need 2000 Intelligence for a raise" :@"" :@"" :-1];
         }
     }
     if(PratID==8)
@@ -313,15 +313,15 @@
     }
     if(PratID==9)
     {
-        if(money>=50&&energy>=25)
+        if(money>=100&&energy>=20)
         {
-            energy-=25;
-            Int+=20;
-            money-=50;
+            energy-=20;
+            Int+=10;
+            money-=100;
             [self stringChanged:@"Well done! Come back if you need more help." :@"" :@"" :-1];
         }
         else {
-            [self stringChanged:@"It costs 50 to be tutored" :@"" :@"" :-1];
+            [self stringChanged:@"It costs 100 to be tutored" :@"" :@"" :-1];
         }
     }
     if (PratID==10) {
@@ -404,9 +404,22 @@
              
 }
 -(void)Option2:(id)sender{
-    if(PratID<=9||PratID==19)
+    if(PratID<=8||PratID==19)
     {
         [self hideBubbla];
+    }
+    if(PratID<=9)
+    {
+        if(energy>=20&&money>=75)
+        {
+            [self stringChanged:@"That was a good work out! Do come back if you please" :@"" :@"" :-1];
+            energy-=20;
+            money-=50;
+            Str+=15;
+        }
+        else {
+            [self stringChanged:@"It costs 75 for a personal trainer" :@"" :@"" :-1];
+        }
     }
     if (PratID==14) {
         if (Cha>99) {
@@ -759,7 +772,7 @@
             NSString *schoolTalk = [properties valueForKey:@"SchoolTalk"];
             if (schoolTalk && [schoolTalk compare:@"True"] == NSOrderedSame) {
                 [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
-                [self stringChanged:@"Welcome! You need tutoring?":@"Tutor me!":@"Naw i'm good":9];
+                [self stringChanged:@"Welcome! You need tutoring?":@"Tutor me! (+Int)":@"I need a personal trainer (+Str)":9];
 
             }
             NSString *barTalk = [properties valueForKey:@"BarTalk"];
