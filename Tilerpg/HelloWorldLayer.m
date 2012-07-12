@@ -37,6 +37,7 @@
     int BiBought;
     int AxeBought;
     int startLumber;
+    int TrainTicket;
 }
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -95,7 +96,7 @@
 }
 
 -(void)newGame:(id)sender{
-    money=5000;
+    money=200000;
     Int=0;
     Str=50;
     Cha=0;
@@ -394,6 +395,12 @@
             [self stringChanged:@"Well then, get to work!" :@"" :@"" :-1];
         }
     }
+    if (PratID==20) {
+        TrainTicket=1;
+        money-=100000;
+        [self stringChanged:@"Go into the house when you feel like leaving." :@"" :@"" :-1];
+        
+    }
              
 }
 -(void)Option2:(id)sender{
@@ -608,6 +615,34 @@
                 [self loadWorld:@"World2.tmx":@"SpawnPointJob"];
                 return;
             }
+            NSString *World3 = [properties valueForKey:@"World3"];
+            if (World3 && [World3 compare:@"True"] == NSOrderedSame) {
+                if (TrainTicket==1) {
+                    [self unloadWorld];
+                    [self loadWorld:@"World3.tmx" :@"SpawnPointW3"];
+                    return;
+                            }
+            }
+            NSString *TalkTrain = [properties valueForKey:@"TalkTrain"];
+            if (TalkTrain && [TalkTrain compare:@"True"] == NSOrderedSame) {
+                if (TrainTicket==1) {
+                    [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                    [self stringChanged:@"You have already bought a ticket. Go into the station.":@"":@"":21];
+
+                } else {
+                    
+                [self showBubbla:ccp(x-winSize.width/4+(30*winSize.width/1024),y+winSize.height/4+(60*winSize.height/768))];
+                [self stringChanged:@"Do you want to buy a ticket for the train? It will cost you 100000.":@"Yes":@"No":20];
+                
+            }
+            }
+            NSString *W2 =[properties valueForKey:@"W2"];
+            if (W2 && [W2 compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx" :@"SpawnPointW2"];
+                return;
+            }
+            
             NSString *Shop = [properties valueForKey:@"Shop"];
             if (Shop && [Shop compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];
@@ -620,7 +655,18 @@
                 [self loadWorld:@"World2.tmx":@"SpawnPointShop"];
                 return;//gygtfv
             }
-            
+            NSString *home2 = [properties valueForKey:@"home2"];
+            if (home2 && [home2 compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"Home2.tmx" :@"SpawnPoint"];
+                return;
+            }
+            NSString *OutHome2 = [properties valueForKey:@"OutHome2"];
+            if (OutHome2 && [OutHome2 compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World3.tmx" :@"SpawnPointOutHome2"];
+                return;
+            }
             NSString *jump = [properties valueForKey:@"jump"];
             if (jump && [jump compare:@"True"] == NSOrderedSame) {
                 if(jumpAble==0)

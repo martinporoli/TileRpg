@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="W3" tilewidth="32" tileheight="32">
+  <image source="../../W3.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="W2" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="home2" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmMlOwzAQQB2gcKC0gDgB4g6CEwhOLLmxV2JHonwbn8KnMQaPGEZjx0vsFimWntJsjl/tGcdRqitd6UpXutKVrnRlOsq6B5WwX7Hj/JpUcnjw9ode43Nfqkc1IaS+pcf/i0eTX2hZBPoTwNUXMR5Q5wev7wQ4A2oVNqYlehak57btcQc8AI/AkNR9nMib2do8UsaVro/nFu6BHCt5PLjomfvmgYUCHvi/67rOgXvgSvAIjVv0WAZW1HeffJTqD9fY0D46fk49qIkHJZcHr2toAdtxDdwAz2bLweMjNdk4txET27a6cnvYxkxdwIP6pHo8AS8Cr5a20XzM/wPtzsdmqf4I9aBxg/ka4fNPCQ+8X8fwLeHZbEceHjpfX6qfnK23Om9L7z1LmT1ixvww4FrNmyFX3o31CAXrKDF/NLWhx47Psf0B2x8KdeTsD1u9kodmbByQsXFAxupvrho3eEzzPGiDPzd1XRvjQY9J82YtnKtZHSU8bGs1bAM9z+cMnDf0OToXvTZ4tDWubOvbJSXnMlzr6TnjwkDnDX2Ovk/iO2NODx2TuFZD+L6GroXajo828tVA/b430BzJYxvXQintnwXe4Zkl1lGu2JBiJCRPgMPnQLn7o4rwgPH/2fdAGBde9y1ajrf93aepLxAao3w+b4s2PHyeM2vI4ZAaHyHj3Ndjw9DU3jY9Qv6rJg9s/6bZ3xSusX135NeU8NgGdhh7wIxhC+IYPXhbp8ljHzgEDoBd8/uIeKypv/3h+v4rOZTysDFJj5g4D/FocpDGXBXp4Zt7Vx0MLB4+/SGR08OFyyPGJcUjxcXmEdMXMR5fGrCyOg==
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.53">
+  <data encoding="base64" compression="zlib">
+   eJztVlsOwzAI47Jb73+D/U4RD0OAphWWoklZeTgBHKLBYDAYDAaDM/AF1vodZ8/5kvYqgPBYc/B+4431JEg5P42HhCgPT11lLymXKI9KbpG4EVg8dv174mr7iD90xmbEsfxk+Jd+K9BxH16brP7Q9pGcIjZcDXp6qqPPO4DMlx1/kRqJIFJzHn9eHusMytCPu+/D0yuZM/3fVsvdywOxqerz7n6vmrtv4dGN7vuo4vlWHdzVqF0eyJxD5m4FD2vP0r4ID2kPhaUf0jlxdhfxPLgc7+yPzHfW6Ids53kL7saz7LN4ePpjd0k+d3ncjQwep+AkPUfORuuPSE6ZPDgd1L7xaCQSO2Kj5aLpOfIe6ebxIZsHke/sT6ir1SeisafzQPSClv+69APVNKmuEJ9RVOggV0/VGpV1HqvPKt8SfshBuOE=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPointW3" x="495" y="1456">
+   <properties>
+    <property name="playerSpawnW3" value=""/>
+   </properties>
+  </object>
+  <object name="SpawnPointOutHome2" x="623" y="1135">
+   <properties>
+    <property name="playerSpawnOutHome2" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

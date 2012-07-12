@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Home2" tilewidth="32" tileheight="32">
+  <image source="Home2.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="sleep" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="OutHome2" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0jEKwkAQQNFV0MZCK7ULsUuTxhukzv3P4whTa0iT3fAefEKmmoEtBQAAAAAAAACgDX00ZM/oFU05P+as32y75brond3zf87vt0vOa3dYWO3Gso87fu1+jW6l/TtO0Tl6bLbdeq28o39qv+MDPQ8DRg==
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.61">
+  <data encoding="base64" compression="zlib">
+   eJzt1EEKwCAMBMB81vr/H5RCT6JQQUoCM5BbDruCiQAAAAAAAAAAyO/anKzGbLOsLer1OLX7t513zt7j607lHpX++SprpXs1erL2d7LmvgE7jhGK
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="336" y="1552">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

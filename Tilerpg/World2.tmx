@@ -53,6 +53,12 @@
     <property name="jump" value="True"/>
    </properties>
   </tile>
+  <tile id="14">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="TalkTrain" value="True"/>
+   </properties>
+  </tile>
   <tile id="20">
    <properties>
     <property name="Collidable" value="True"/>
@@ -76,13 +82,22 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="24">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="World3" value="True"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="210" name="lumberjack" tilewidth="32" tileheight="32">
   <image source="lumberjack.png" width="32" height="32"/>
  </tileset>
+ <tileset firstgid="211" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
+ </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztmktPwzAMgIPK4AQDbi0gNtYKgcRj4iVtF/7/ryLRiGSiJLVjp82mHr7Dwpr4S7zEpW2VUt0B0RbSB6evNbgW0jntofG2QnH7oLpuI32F+n0QXAPM2H1xtcy+sPHBOQvlAGSTGAN3PqTmNnX8teC6Uv9WKvsYM8ePkvtj8FNADBMTObnVXBXODdKjQXI0ElyPseLmepwDcsRjxnjUPEWoPXNYosedZqm5/2PhfF4JeuTKDzNGhYDrERvflxPPCr9HWKoEf4pHrB87T++aD82n5kvzrTkLAGOH7Tk9+vrB5AKF+QF5UM4sKQ/MmTvP4DsT9sDg8zjRnI7sETrXQ+0+jwvNpae97/ch7WHzGNNOySvoMQPk8uCuB9ajyeiRgvvbt/G47fCalPXw/c9J0iOU56nXcT1idWldkAf0CXmYutTUn0v1vy5dqV0teY0g5hGr2SQ9JM+zmIep2Uy9Zuo2W7NRPbqAh91/Qkh4cM5B7Hr00ThjpdwDY2od+13OesQcoAc8S46Vf3+olf/MwRLzoNxHxTzcXLH3KCbPzV6xULu9oSKMQfGAeUWdq9R9ILcHZg8N7akp11LB5FUKG+AxxjMByeeN1mNoB7cu4bpMHnIeEs/1SvGw7yXsuwf3+fPQHvAdDMn3JIb2wMw7pyaXjvdF8+rwRpzbITwk9pq+93DM2mHfBZIcn9rPL3sC7U0=
+   eJztmltPwjAUgGsm+qSo8QW8gcwYjajEW8Je/Cn+/19hT6CxNm13bmXT8PCFrLC2X3vWnm3Uxpgbj9Pg+K9RK3jUgnM16lqsPy/WHlVQT52pF8obpX7HoNbTRDza6r1VnINUeznCuXOfGA/qmMV+B2O2iHwfsmT2ATwuGR5hPZyxleKuD3dsXb64HpzvSsLx6LrP2h5YP0rsY7iz3HvMhR6fHY39i+Xd8mp5sHwUmo/SVAm67teWH2AfOek550iPMZKdjpB6dNVvqcehR4n+QBvh2h8yioxhHz2uLFPL9ZpJcDxT9CgVH9BGau33kXrk2o/FxNzg1whHxfCneOTqceME+QDkAm9mlRdAPnCQwO+7X17So60eTCxQGP4jD8qepeWB2XOHBXwHyh4YYh57lv2OPVL7eqo85nFkOY6Ut10f2h4ujjHllLjyPQYepTyk84H1GBf04BBe+64/Ybl/Dmc+Ys+cND1Scc49T+qRy0tHPfLwfVIekJdC/jk1v/PSmVnlkmcIch65nE3TQ3M/y3lAzgb5GuRtLmejerjnvLF2hhk0PCT7IHY+2hgHbXHugTG5jvutZD5yDr6Hv5fsmvj6MDLxPQdLzoNyH5XzCGPF3aNAnMNaMTGrtaEitEHx8OOKOlbcdaC0B2YNTa2pnHOpYOKKw9Lz0H4ngEHjfaPDeWzaIcxLpC5bDz0Pjfd6ffFw/0v46x4LYV2b9mgSHtIY27QHZtwlObl2fx8tTwHPxLHdhIfGWtP2PxyYu0ZQP7d9aj3f99Hrsg==
   </data>
  </layer>
  <layer name="foreground" width="50" height="50">
@@ -90,9 +105,9 @@
    eJztzqERADAIADGWhev+E9QzAAgS9+4jAAAAgCuq9Vu5AABgWm4PAAAADPnLWQE0
   </data>
  </layer>
- <layer name="Meta" width="50" height="50" opacity="0.56">
+ <layer name="Meta" width="50" height="50" opacity="0.46">
   <data encoding="base64" compression="zlib">
-   eJztVtkKAyEM9Iu73bcebz3+uyysIGI0l5pIB8K2GpMZj2gIIWyJWQGHy5Z8W5aP05gDKE8tbikv5F/zK/2WGEVjiwcGrXkotUt0UKG9LzD7UPs8asScXSu0cpdi7JU+64ic9+zrEZH7LfnvbU2+53eF9YhYQcMfutB4a/Q0iQ4rkOiwBI6O3uDsJaqOESjxvQDtHG4jdVD9NHXMqD1Ybhzfw+8d/OuYAes6et2D0py9YGE9NDRKdUBzPfre19BR6oPae8HTetRizTgftbcFV39tjjG+VgBxw+iYVWNLqOlovSlL3O/ZOOmdgh2HiVPT0Rs590fg6+DW0JF7S7Ie1NjcdyxmX7ZqMnc9oJqK5UcF5W6h5Gj5Hn2vxO8aePOVxsNyoc4V93yM0kExyVhuLopGT+CeOYtYRcsKOrzzj5DcS9bgTQOm1ntAyvNzmmU8AUthQYfGPpC+A6TQyvcDyVHZZQ==
+   eJzdVkkOwyAM5MVtc+t26vbuKlIiIYSNVzAZycpG7BmDDSmldM4sCihcSs7n4j1mNT/aHEBxML+1uBAf7Ll2rzGOxpZuSl5berH8SHRQuLT4cf1x16F1PVrmZlSvgGpe4qfEovQ5EjvnpbjOiJ37NXv2nhPr2vtu197zsXP/Jfs67bmmngNieuHIGizOGp5Ghffeq4FGRyRIdHhDspa4OnqgxvcEvJdw66mDO85Sx4jeQ+UmGbuOe6f5dYxAdB1e+6A2phcizIeFRq0OKNe9930LHbVv0HsvzDQfmK8R9YGdLaT6sRxTxkYBxI2iY1SPrQHT0TpT1rjfiv+0ewr1P4ofTIc3Su73JNch7aE915ZmPri+pedYyrps9WTpfEA9lcqPC87ewonRGrt+e2XjLkmWr9wflQs3V9L66KWDY5p/pbE4GmeCtOYi4ihajqBjdv47NPtSNMymgdLrZ0DO87NZZDwAyxFBh8U60J4DtLCK9wfdWuWz
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -131,10 +146,20 @@
     <property name="playerSpawnJob" value=""/>
    </properties>
   </object>
+  <object name="SpawnPointW2" x="79" y="368">
+   <properties>
+    <property name="playerSpawnW2" value=""/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="characters" width="50" height="50">
   <data encoding="base64" compression="zlib">
    eJztzgENAAAIA6D3j2ciY1w3SEACALdMOwAAAAAAAAAAvLTHvgDT
+  </data>
+ </layer>
+ <layer name="characters2" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzgENAAAIA6D3L2gdY1w3SEACAHDDtAMAAAAAAAAAvLa/TwDY
   </data>
  </layer>
 </map>
